@@ -24,7 +24,7 @@ export default function Portfolio() {
     title: "CI/CD Pipeline for Django Notes App",
     description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
     githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
-    imageUrl: "/lovable-uploads/7dd1de81-9447-4710-a2f9-c1bc262994ab.png",
+    imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
     technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
   }];
   const certifications = ["Introduction to DevOps", "Introduction to Cloud Computing", "Introduction to Agile Development and Scrum", "Introduction to Linux and Shell Scripting", "Getting Started with Git and GitHub"];
