@@ -46,10 +46,7 @@ export function ProjectCard({
           </Button>
           
           <Button variant="ghost" size="sm" asChild className="hover:bg-accent/10 hover:text-accent">
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4" />
-              Live Demo
-            </a>
+            
           </Button>
         </div>
       </CardContent>
