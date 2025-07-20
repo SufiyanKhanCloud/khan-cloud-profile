@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Send, CheckCircle } from "lucide-react";
+import { Mail, Send, CheckCircle, User, AtSign, MessageSquare, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -62,35 +62,52 @@ export function ContactForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" placeholder="Your name" required />
+              <Label htmlFor="name" className="flex items-center gap-2">
+                <User className="h-4 w-4" />
+                Name
+              </Label>
+              <Input id="name" placeholder="Your name" required className="transition-all duration-300 focus:shadow-medium" />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="your@email.com" required />
+              <Label htmlFor="email" className="flex items-center gap-2">
+                <AtSign className="h-4 w-4" />
+                Email
+              </Label>
+              <Input id="email" type="email" placeholder="your@email.com" required className="transition-all duration-300 focus:shadow-medium" />
             </div>
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="subject">Subject</Label>
-            <Input id="subject" placeholder="What's this about?" required />
+            <Label htmlFor="subject" className="flex items-center gap-2">
+              <FileText className="h-4 w-4" />
+              Subject
+            </Label>
+            <Input id="subject" placeholder="What's this about?" required className="transition-all duration-300 focus:shadow-medium" />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message" className="flex items-center gap-2">
+              <MessageSquare className="h-4 w-4" />
+              Message
+            </Label>
             <Textarea 
               id="message" 
               placeholder="Tell me about your project or just say hi!" 
               rows={4}
               required 
+              className="transition-all duration-300 focus:shadow-medium resize-none"
             />
           </div>
           
-          <Button type="submit" className="w-full" disabled={isLoading}>
+          <Button 
+            type="submit" 
+            className="w-full transition-all duration-300 hover:shadow-glow" 
+            disabled={isLoading}
+          >
             {isLoading ? (
               <>
                 <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                Sending...
+                Sending Message...
               </>
             ) : (
               <>

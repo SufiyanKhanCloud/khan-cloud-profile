@@ -9,6 +9,8 @@ import { SkillCard } from "@/components/SkillCard";
 import { ContactForm } from "@/components/ContactForm";
 import { FloatingNav } from "@/components/FloatingNav";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { PageLoader } from "@/components/PageLoader";
 export default function Portfolio() {
   const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const projects = [{
@@ -48,24 +50,30 @@ export default function Portfolio() {
     title: "Programming",
     skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
   }];
-  return <div className="min-h-screen bg-background font-inter relative">
-      {/* Background Mesh Gradient */}
-      <div className="fixed inset-0 bg-gradient-mesh pointer-events-none" />
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="text-xl font-bold text-primary">
-              Sufiyan Khan
+  return (
+    <>
+      <PageLoader />
+      <div className="min-h-screen bg-background font-inter relative">
+        {/* Background Mesh Gradient */}
+        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none" />
+        
+        {/* Navigation */}
+        <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="text-xl font-bold text-primary">
+                Sufiyan Khan
+              </div>
+              <ThemeToggle />
             </div>
-            <ThemeToggle />
           </div>
-        </div>
-      </nav>
+        </nav>
 
-      {/* Floating Navigation */}
-      <FloatingNav />
+        {/* Floating Navigation */}
+        <FloatingNav />
+        
+        {/* Scroll to Top */}
+        <ScrollToTop />
 
       {/* Hero Section */}
       <AnimatedSection id="hero">
@@ -273,13 +281,15 @@ export default function Portfolio() {
         </section>
       </AnimatedSection>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border bg-muted/30 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground hover:text-foreground transition-colors">
-            © 2025 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
-          </p>
-        </div>
-      </footer>
-    </div>;
+        {/* Footer */}
+        <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border bg-muted/30 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-muted-foreground hover:text-foreground transition-colors">
+              © 2025 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
 }
