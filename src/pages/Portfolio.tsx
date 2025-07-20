@@ -18,18 +18,21 @@ export default function Portfolio() {
       title: "Dockerized Expense Tracker",
       description: "Java Spring Boot + MySQL app with Docker Compose. Deployed to AWS EC2 with persistent volumes.",
       githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/Expenses-Tracker-WebApp",
+      imageUrl: "/lovable-uploads/4be806dc-05ac-4208-961f-fd08d6b0f9a7.png",
       technologies: ["Spring Boot", "MySQL", "Docker", "AWS EC2"]
     },
     {
       title: "Flask + MySQL Microservice", 
       description: "Two-tier microservices app with Flask and MySQL containers, deployed to EC2 under 10 mins.",
       githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/two-tier-flask-app",
+      imageUrl: "/lovable-uploads/f6a1f223-b480-4572-9191-d2ce90198d22.png",
       technologies: ["Flask", "MySQL", "Docker", "Microservices"]
     },
     {
       title: "CI/CD Pipeline for Django Notes App",
       description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
       githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
+      imageUrl: "/lovable-uploads/7dd1de81-9447-4710-a2f9-c1bc262994ab.png",
       technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
     }
   ];
@@ -84,9 +87,11 @@ export default function Portfolio() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse">
-              <div className="w-full h-full rounded-full bg-background flex items-center justify-center text-6xl font-bold text-primary">
-                SK
-              </div>
+              <img 
+                src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
+                alt="Sufiyan Khan" 
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
             
             <h1 className="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
