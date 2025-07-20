@@ -82,9 +82,11 @@ export default function Portfolio() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" className="animate-scale-in">
-                <Download className="h-5 w-5" />
-                Download CV
+              <Button variant="hero" size="xl" className="animate-scale-in" asChild>
+                <a href="/resume.pdf" download>
+                  <Download className="h-5 w-5" />
+                  Download CV
+                </a>
               </Button>
               
               <Button variant="glass" size="xl" asChild className="animate-scale-in">
