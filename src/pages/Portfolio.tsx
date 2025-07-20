@@ -6,46 +6,70 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { TypewriterEffect } from "@/components/TypewriterEffect";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SkillCard } from "@/components/SkillCard";
+
 export default function Portfolio() {
-  const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
-  const projects = [{
-    title: "Dockerized Expense Tracker",
-    description: "Java Spring Boot + MySQL app with Docker Compose. Deployed to AWS EC2 with persistent volumes.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/Expenses-Tracker-WebApp",
-    imageUrl: "/lovable-uploads/4be806dc-05ac-4208-961f-fd08d6b0f9a7.png",
-    technologies: ["Spring Boot", "MySQL", "Docker", "AWS EC2"]
-  }, {
-    title: "Flask + MySQL Microservice",
-    description: "Two-tier microservices app with Flask and MySQL containers, deployed to EC2 under 10 mins.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/two-tier-flask-app",
-    imageUrl: "/lovable-uploads/f6a1f223-b480-4572-9191-d2ce90198d22.png",
-    technologies: ["Flask", "MySQL", "Docker", "Microservices"]
-  }, {
-    title: "CI/CD Pipeline for Django Notes App",
-    description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
-    imageUrl: "/lovable-uploads/7dd1de81-9447-4710-a2f9-c1bc262994ab.png",
-    technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
-  }];
-  const certifications = ["Introduction to DevOps", "Introduction to Cloud Computing", "Introduction to Agile Development and Scrum", "Introduction to Linux and Shell Scripting", "Getting Started with Git and GitHub"];
-  const skillCategories = [{
-    icon: Terminal,
-    title: "DevOps Tools",
-    skills: ["Docker", "Git", "GitHub", "GitLab", "Jenkins", "CI/CD", "Shell Scripting"]
-  }, {
-    icon: Cloud,
-    title: "Cloud & Infrastructure",
-    skills: ["AWS EC2", "VirtualBox", "VMware", "Infrastructure as Code"]
-  }, {
-    icon: Server,
-    title: "Operating Systems",
-    skills: ["Linux (Ubuntu)", "Windows", "System Administration"]
-  }, {
-    icon: Code,
-    title: "Programming",
-    skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
-  }];
-  return <div className="min-h-screen bg-background font-inter">
+  const typewriterTexts = [
+    "Aspiring DevOps Engineer",
+    "Cloud & Infrastructure Automation Enthusiast"
+  ];
+
+  const projects = [
+    {
+      title: "Dockerized Expense Tracker",
+      description: "Java Spring Boot + MySQL app with Docker Compose. Deployed to AWS EC2 with persistent volumes.",
+      githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/Expenses-Tracker-WebApp",
+      imageUrl: "/lovable-uploads/4be806dc-05ac-4208-961f-fd08d6b0f9a7.png",
+      technologies: ["Spring Boot", "MySQL", "Docker", "AWS EC2"]
+    },
+    {
+      title: "Flask + MySQL Microservice", 
+      description: "Two-tier microservices app with Flask and MySQL containers, deployed to EC2 under 10 mins.",
+      githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/two-tier-flask-app",
+      imageUrl: "/lovable-uploads/f6a1f223-b480-4572-9191-d2ce90198d22.png",
+      technologies: ["Flask", "MySQL", "Docker", "Microservices"]
+    },
+    {
+      title: "CI/CD Pipeline for Django Notes App",
+      description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
+      githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
+      imageUrl: "/lovable-uploads/7dd1de81-9447-4710-a2f9-c1bc262994ab.png",
+      technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
+    }
+  ];
+
+  const certifications = [
+    "Introduction to DevOps",
+    "Introduction to Cloud Computing", 
+    "Introduction to Agile Development and Scrum",
+    "Introduction to Linux and Shell Scripting",
+    "Getting Started with Git and GitHub"
+  ];
+
+  const skillCategories = [
+    {
+      icon: Terminal,
+      title: "DevOps Tools",
+      skills: ["Docker", "Git", "GitHub", "GitLab", "Jenkins", "CI/CD", "Shell Scripting"]
+    },
+    {
+      icon: Cloud,
+      title: "Cloud & Infrastructure", 
+      skills: ["AWS EC2", "VirtualBox", "VMware", "Infrastructure as Code"]
+    },
+    {
+      icon: Server,
+      title: "Operating Systems",
+      skills: ["Linux (Ubuntu)", "Windows", "System Administration"]
+    },
+    {
+      icon: Code,
+      title: "Programming",
+      skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background font-inter">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +87,11 @@ export default function Portfolio() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse">
-              <img src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" alt="Sufiyan Khan" className="w-full h-full rounded-full object-cover" />
+              <img 
+                src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
+                alt="Sufiyan Khan" 
+                className="w-full h-full rounded-full object-cover"
+              />
             </div>
             
             <h1 className="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
@@ -128,7 +156,9 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => <ProjectCard key={index} {...project} />)}
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
           </div>
         </div>
       </section>
@@ -138,7 +168,9 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skillCategories.map((category, index) => <SkillCard key={index} {...category} />)}
+            {skillCategories.map((category, index) => (
+              <SkillCard key={index} {...category} />
+            ))}
           </div>
         </div>
       </section>
@@ -148,7 +180,8 @@ export default function Portfolio() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">IBM Certifications</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {certifications.map((cert, index) => <Card key={index} className="hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-gradient-card border-border/50">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
                     <Award className="h-5 w-5 text-primary" />
@@ -161,7 +194,8 @@ export default function Portfolio() {
                     Verify Certificate
                   </Button>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -233,8 +267,11 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border bg-muted/30">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground">© 2025 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.</p>
+          <p className="text-muted-foreground">
+            © 2024 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
+          </p>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 }
