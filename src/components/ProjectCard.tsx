@@ -17,7 +17,7 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return <Card className="group hover:shadow-strong transition-all duration-300 hover:-translate-y-2 bg-gradient-card border-border/50">
       {imageUrl && <div className="relative overflow-hidden rounded-t-lg">
-          <img src={imageUrl} alt={title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
+          <img src={"https://github.com/SufiyanKhanCloud/khan-cloud-profile/blob/main/public/lovable-uploads/django_notes.png"} alt={title} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
           
         </div>}
       
