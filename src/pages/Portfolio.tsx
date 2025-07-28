@@ -34,12 +34,12 @@ export default function Portfolio() {
     technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
   }];
   const certifications = [
-    { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" },
     { name: "Introduction to DevOps", url: null },
     { name: "Introduction to Cloud Computing", url: null },
     { name: "Introduction to Agile Development and Scrum", url: null },
     { name: "Introduction to Linux and Shell Scripting", url: null },
-    { name: "Getting Started with Git and GitHub", url: null }
+    { name: "Getting Started with Git and GitHub", url: null },
+    { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" }
   ];
   const skillCategories = [{
     icon: Terminal,
@@ -57,6 +57,10 @@ export default function Portfolio() {
     icon: Code,
     title: "Programming",
     skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
+  }, {
+    icon: Lightbulb,
+    title: "Additional Skills",
+    skills: ["Prompt Engineering", "Automation", "Analytical Skills"]
   }];
   return (
     <>
@@ -73,13 +77,20 @@ export default function Portfolio() {
               <div className="text-xl font-bold text-primary">
                 Sufiyan Khan
               </div>
+              
+              {/* Center Navigation Links */}
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="#hero" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                <a href="#about" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">About</a>
+                <a href="#projects" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">Projects</a>
+                <a href="#certifications" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">Certifications</a>
+                <a href="#contact" className="text-foreground hover:text-primary transition-colors duration-300 font-medium">Contact</a>
+              </div>
+              
               <ThemeToggle />
             </div>
           </div>
         </nav>
-
-        {/* Floating Navigation */}
-        <FloatingNav />
         
         {/* Scroll to Top */}
         <ScrollToTop />
@@ -166,8 +177,10 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <div key={index} className="animate-slide-up" style={{ animationDelay: `${index * 150}ms` }}>
-                  <ProjectCard {...project} />
+                <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
+                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-4 hover:rotate-2 perspective-1000">
+                    <ProjectCard {...project} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -180,10 +193,12 @@ export default function Portfolio() {
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {skillCategories.map((category, index) => (
-                <div key={index} className="animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
-                  <SkillCard {...category} />
+                <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
+                    <SkillCard {...category} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -198,33 +213,33 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold text-center mb-12">Professional Certifications</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
-                <Card 
-                  key={index} 
-                  className="hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-border/50 group cursor-pointer"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center gap-3">
-                      <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                      <CardTitle className="text-sm">{cert.name}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    {cert.url ? (
-                      <Button variant="hero" size="sm" className="w-full" asChild>
-                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
-                          View Certificate
-                        </a>
-                      </Button>
-                    ) : (
-                      <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                        <ExternalLink className="h-4 w-4" />
-                        Verify Certificate
-                      </Button>
-                    )}
-                  </CardContent>
-                </Card>
+                <div key={index} className="group" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
+                    <Card className="hover:shadow-elevated transition-all duration-500 bg-gradient-card border-border/50 group cursor-pointer h-full">
+                      <CardHeader className="pb-4">
+                        <div className="flex items-center gap-3">
+                          <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                          <CardTitle className="text-sm">{cert.name}</CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        {cert.url ? (
+                          <Button variant="hero" size="sm" className="w-full" asChild>
+                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4" />
+                              View Certificate
+                            </a>
+                          </Button>
+                        ) : (
+                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
+                            <ExternalLink className="h-4 w-4" />
+                            Verify Certificate
+                          </Button>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
