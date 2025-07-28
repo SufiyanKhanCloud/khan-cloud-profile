@@ -261,7 +261,19 @@ export default function Portfolio() {
       <AnimatedSection id="about" animation="slide-in-left" delay={200}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <Award className="h-6 w-6 text-primary animate-pulse" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                About Me
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Passionate developer building scalable solutions
+              </p>
+            </div>
             <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
               <CardContent className="p-8">
                 <p className="text-lg leading-relaxed text-muted-foreground">
@@ -281,7 +293,19 @@ export default function Portfolio() {
       <AnimatedSection id="projects" animation="zoom-in" delay={300}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <Code className="h-6 w-6 text-primary animate-bounce-soft" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Featured Projects
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Real-world applications showcasing DevOps expertise
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
@@ -299,7 +323,19 @@ export default function Portfolio() {
       <AnimatedSection animation="slide-in-right" delay={400}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <Terminal className="h-6 w-6 text-primary animate-pulse" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Technical Skills
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Technologies and tools I work with daily
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {skillCategories.map((category, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 100}ms` }}>
@@ -317,7 +353,19 @@ export default function Portfolio() {
       <AnimatedSection id="certifications" animation="slide-up" delay={500}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Professional Certifications</h2>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <Award className="h-6 w-6 text-primary animate-bounce-soft" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Professional Certifications
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Validated expertise through industry certifications
+              </p>
+            </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
                 <div key={index} className="group" style={{ animationDelay: `${index * 100}ms` }}>
@@ -357,7 +405,19 @@ export default function Portfolio() {
       <AnimatedSection animation="slide-in-left" delay={600}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Community Impact</h2>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <Lightbulb className="h-6 w-6 text-primary animate-pulse" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Community Impact
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Sharing knowledge and inspiring the next generation
+              </p>
+            </div>
             <Card className="bg-gradient-accent text-accent-foreground shadow-elevated hover:shadow-strong transition-all duration-500 hover:-translate-y-2">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-4">
@@ -405,7 +465,16 @@ export default function Portfolio() {
       <AnimatedSection id="contact" animation="zoom-in" delay={700}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <Mail className="h-6 w-6 text-primary animate-bounce-soft" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Let's Connect
+              </h2>
+            </div>
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
               I'm always interested in discussing DevOps, cloud technologies, and 
               opportunities to collaborate on exciting projects.
