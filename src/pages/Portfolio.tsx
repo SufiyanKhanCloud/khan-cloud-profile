@@ -11,6 +11,7 @@ import { FloatingNav } from "@/components/FloatingNav";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PageLoader } from "@/components/PageLoader";
+import { LazyImage } from "@/components/LazyImage";
 export default function Portfolio() {
   const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const projects = [{
@@ -32,7 +33,14 @@ export default function Portfolio() {
     imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
     technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
   }];
-  const certifications = ["Introduction to DevOps", "Introduction to Cloud Computing", "Introduction to Agile Development and Scrum", "Introduction to Linux and Shell Scripting", "Getting Started with Git and GitHub"];
+  const certifications = [
+    { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" },
+    { name: "Introduction to DevOps", url: null },
+    { name: "Introduction to Cloud Computing", url: null },
+    { name: "Introduction to Agile Development and Scrum", url: null },
+    { name: "Introduction to Linux and Shell Scripting", url: null },
+    { name: "Getting Started with Git and GitHub", url: null }
+  ];
   const skillCategories = [{
     icon: Terminal,
     title: "DevOps Tools",
@@ -54,11 +62,12 @@ export default function Portfolio() {
     <>
       <PageLoader />
       <div className="min-h-screen bg-background font-inter relative">
-        {/* Background Mesh Gradient */}
-        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none" />
+        {/* Enhanced Background with Performance Optimization */}
+        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none will-change-transform" />
+        <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
         
-        {/* Navigation */}
-        <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+        {/* Enhanced Navigation with Performance Optimization */}
+        <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border will-change-transform">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="text-xl font-bold text-primary">
@@ -81,7 +90,11 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated">
-                <img src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" alt="Sufiyan Khan" className="w-full h-full rounded-full object-cover" />
+                <LazyImage 
+                  src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
+                  alt="Sufiyan Khan" 
+                  className="w-full h-full rounded-full object-cover" 
+                />
               </div>
               
               <h1 className="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
@@ -182,25 +195,34 @@ export default function Portfolio() {
       <AnimatedSection id="certifications" animation="slide-up" delay={500}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">IBM Certifications</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Professional Certifications</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
                 <Card 
                   key={index} 
-                  className="hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-border/50 group"
+                  className="hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-border/50 group cursor-pointer"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-3">
                       <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                      <CardTitle className="text-sm">{cert}</CardTitle>
+                      <CardTitle className="text-sm">{cert.name}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                      <ExternalLink className="h-4 w-4" />
-                      Verify Certificate
-                    </Button>
+                    {cert.url ? (
+                      <Button variant="hero" size="sm" className="w-full" asChild>
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                          View Certificate
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
+                        <ExternalLink className="h-4 w-4" />
+                        Verify Certificate
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               ))}
