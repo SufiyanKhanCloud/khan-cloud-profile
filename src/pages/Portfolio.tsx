@@ -224,10 +224,10 @@ export default function Portfolio() {
                       </CardHeader>
                       <CardContent className="pt-0">
                         {cert.url ? (
-                          <Button variant="hero" size="sm" className="w-full" asChild>
+                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300" asChild>
                             <a href={cert.url} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="h-4 w-4" />
-                              View Certificate
+                              Verify Certificate
                             </a>
                           </Button>
                         ) : (
@@ -305,6 +305,10 @@ export default function Portfolio() {
             </p>
             
             <ContactForm />
+            
+            <p className="text-sm text-muted-foreground mt-4 mb-6">
+              If the form doesn't work, feel free to send me a direct email instead.
+            </p>
             
             <div className="mt-8">
               <Button variant="cta" size="xl" asChild className="animate-glow-pulse">
