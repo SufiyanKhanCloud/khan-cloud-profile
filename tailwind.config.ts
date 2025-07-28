@@ -153,6 +153,9 @@ export default {
 				'zoom-in': 'zoom-in 0.5s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'bounce-soft': 'bounce-soft 2s infinite'
+			},
+			perspective: {
+				'1000': '1000px',
 			}
 		}
 	},
