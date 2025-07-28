@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -11,12 +11,7 @@ import { FloatingNav } from "@/components/FloatingNav";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PageLoader } from "@/components/PageLoader";
-import { LazyImage } from "@/components/LazyImage";
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("hero");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  
   const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const projects = [{
     title: "Dockerized Expense Tracker",
@@ -37,14 +32,7 @@ export default function Portfolio() {
     imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
     technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
   }];
-  const certifications = [
-    { name: "Introduction to DevOps", url: null },
-    { name: "Introduction to Cloud Computing", url: null },
-    { name: "Introduction to Agile Development and Scrum", url: null },
-    { name: "Introduction to Linux and Shell Scripting", url: null },
-    { name: "Getting Started with Git and GitHub", url: null },
-    { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" }
-  ];
+  const certifications = ["Introduction to DevOps", "Introduction to Cloud Computing", "Introduction to Agile Development and Scrum", "Introduction to Linux and Shell Scripting", "Getting Started with Git and GitHub"];
   const skillCategories = [{
     icon: Terminal,
     title: "DevOps Tools",
@@ -61,143 +49,28 @@ export default function Portfolio() {
     icon: Code,
     title: "Programming",
     skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
-  }, {
-    icon: Lightbulb,
-    title: "Additional Skills",
-    skills: ["Prompt Engineering", "Automation", "Analytical Skills"]
   }];
-
-  // Navigation logic
-  const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Certifications", href: "#certifications" },
-    { name: "Contact", href: "#contact" }
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      
-      // Active section detection
-      const sections = navItems.map(item => item.href.slice(1));
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.slice(1));
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMobileMenuOpen(false);
-  };
   return (
     <>
       <PageLoader />
       <div className="min-h-screen bg-background font-inter relative">
-        {/* Enhanced Background with Performance Optimization */}
-        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none will-change-transform" />
-        <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
+        {/* Background Mesh Gradient */}
+        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none" />
         
-        {/* Enhanced Modern Navigation */}
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 will-change-transform ${
-          isScrolled 
-            ? 'bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-lg' 
-            : 'bg-background/80 backdrop-blur-sm border-b border-transparent'
-        }`}>
+        {/* Navigation */}
+        <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              {/* Logo/Name with Avatar */}
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-hero p-0.5 animate-glow-pulse">
-                  <LazyImage 
-                    src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
-                    alt="Sufiyan Khan" 
-                    className="w-full h-full rounded-full object-cover" 
-                  />
-                </div>
-                <div className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-                  Sufiyan Khan
-                </div>
+              <div className="text-xl font-bold text-primary">
+                Sufiyan Khan
               </div>
-              
-              {/* Desktop Navigation Links */}
-              <div className="hidden md:flex items-center space-x-1">
-                {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => scrollToSection(item.href)}
-                    className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105 ${
-                      activeSection === item.href.slice(1)
-                        ? 'text-primary bg-primary/10 shadow-md'
-                        : 'text-foreground hover:text-primary hover:bg-primary/5'
-                    }`}
-                  >
-                    {item.name}
-                    {activeSection === item.href.slice(1) && (
-                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full animate-pulse" />
-                    )}
-                  </button>
-                ))}
-              </div>
-              
-              {/* Right side controls */}
-              <div className="flex items-center space-x-3">
-                <ThemeToggle />
-                
-                {/* Mobile menu button */}
-                <button
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                  className="md:hidden p-2 rounded-lg hover:bg-primary/10 transition-colors"
-                  aria-label="Toggle mobile menu"
-                >
-                  {isMobileMenuOpen ? (
-                    <X className="h-5 w-5" />
-                  ) : (
-                    <Menu className="h-5 w-5" />
-                  )}
-                </button>
-              </div>
+              <ThemeToggle />
             </div>
-            
-            {/* Mobile Navigation Menu */}
-            {isMobileMenuOpen && (
-              <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-lg animate-fade-in">
-                <div className="px-4 py-6 space-y-3">
-                  {navItems.map((item) => (
-                    <button
-                      key={item.name}
-                      onClick={() => scrollToSection(item.href)}
-                      className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                        activeSection === item.href.slice(1)
-                          ? 'text-primary bg-primary/10 shadow-md'
-                          : 'text-foreground hover:text-primary hover:bg-primary/5'
-                      }`}
-                    >
-                      {item.name}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </nav>
+
+        {/* Floating Navigation */}
+        <FloatingNav />
         
         {/* Scroll to Top */}
         <ScrollToTop />
@@ -208,11 +81,7 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated">
-                <LazyImage 
-                  src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
-                  alt="Sufiyan Khan" 
-                  className="w-full h-full rounded-full object-cover" 
-                />
+                <img src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" alt="Sufiyan Khan" className="w-full h-full rounded-full object-cover" />
               </div>
               
               <h1 className="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
@@ -261,19 +130,7 @@ export default function Portfolio() {
       <AnimatedSection id="about" animation="slide-in-left" delay={200}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Award className="h-6 w-6 text-primary animate-pulse" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                About Me
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Passionate developer building scalable solutions
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
             <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
               <CardContent className="p-8">
                 <p className="text-lg leading-relaxed text-muted-foreground">
@@ -293,25 +150,11 @@ export default function Portfolio() {
       <AnimatedSection id="projects" animation="zoom-in" delay={300}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Code className="h-6 w-6 text-primary animate-bounce-soft" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                Featured Projects
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Real-world applications showcasing DevOps expertise
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-4 hover:rotate-2 perspective-1000">
-                    <ProjectCard {...project} />
-                  </div>
+                <div key={index} className="animate-slide-up" style={{ animationDelay: `${index * 150}ms` }}>
+                  <ProjectCard {...project} />
                 </div>
               ))}
             </div>
@@ -323,25 +166,11 @@ export default function Portfolio() {
       <AnimatedSection animation="slide-in-right" delay={400}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Terminal className="h-6 w-6 text-primary animate-pulse" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                Technical Skills
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Technologies and tools I work with daily
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {skillCategories.map((category, index) => (
-                <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
-                    <SkillCard {...category} />
-                  </div>
+                <div key={index} className="animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
+                  <SkillCard {...category} />
                 </div>
               ))}
             </div>
@@ -353,48 +182,27 @@ export default function Portfolio() {
       <AnimatedSection id="certifications" animation="slide-up" delay={500}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Award className="h-6 w-6 text-primary animate-bounce-soft" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                Professional Certifications
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Validated expertise through industry certifications
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-center mb-12">IBM Certifications</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
-                <div key={index} className="group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
-                    <Card className="hover:shadow-elevated transition-all duration-500 bg-gradient-card border-border/50 group cursor-pointer h-full">
-                      <CardHeader className="pb-4">
-                        <div className="flex items-center gap-3">
-                          <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                          <CardTitle className="text-sm">{cert.name}</CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        {cert.url ? (
-                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300" asChild>
-                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="h-4 w-4" />
-                              Verify Certificate
-                            </a>
-                          </Button>
-                        ) : (
-                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                            <ExternalLink className="h-4 w-4" />
-                            Verify Certificate
-                          </Button>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
+                <Card 
+                  key={index} 
+                  className="hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 bg-gradient-card border-border/50 group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3">
+                      <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                      <CardTitle className="text-sm">{cert}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
+                      <ExternalLink className="h-4 w-4" />
+                      Verify Certificate
+                    </Button>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -405,19 +213,7 @@ export default function Portfolio() {
       <AnimatedSection animation="slide-in-left" delay={600}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Lightbulb className="h-6 w-6 text-primary animate-pulse" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                Community Impact
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Sharing knowledge and inspiring the next generation
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-center mb-12">Community Impact</h2>
             <Card className="bg-gradient-accent text-accent-foreground shadow-elevated hover:shadow-strong transition-all duration-500 hover:-translate-y-2">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-4">
@@ -465,26 +261,13 @@ export default function Portfolio() {
       <AnimatedSection id="contact" animation="zoom-in" delay={700}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Mail className="h-6 w-6 text-primary animate-bounce-soft" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                Let's Connect
-              </h2>
-            </div>
+            <h2 className="text-3xl font-bold mb-8">Let's Connect</h2>
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
               I'm always interested in discussing DevOps, cloud technologies, and 
               opportunities to collaborate on exciting projects.
             </p>
             
             <ContactForm />
-            
-            <p className="text-sm text-muted-foreground mt-4 mb-6">
-              If the form doesn't work, feel free to send me a direct email instead.
-            </p>
             
             <div className="mt-8">
               <Button variant="cta" size="xl" asChild className="animate-glow-pulse">
