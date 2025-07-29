@@ -38,11 +38,11 @@ export default function Portfolio() {
     technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
   }];
   const certifications = [
-    { name: "Introduction to DevOps", url: "https://coursera.org/share/abe1e8c5b24e5e9f7e8b0ad7cf6c6b5e" },
-    { name: "Introduction to Cloud Computing", url: "https://coursera.org/share/bcd2f9e6c35f6f0f8f9c1be8df7d7c6f" },
-    { name: "Introduction to Agile Development and Scrum", url: "https://coursera.org/share/cde3f0f7d46f7f1f9f0d2cf9ef8e8d7f" },
-    { name: "Introduction to Linux and Shell Scripting", url: "https://coursera.org/share/def4f1f8e57f8f2f0f1e3df0ff9f9e8f" },
-    { name: "Getting Started with Git and GitHub", url: "https://coursera.org/share/efg5f2f9f68f9f3f1f2f4ef1ff0f0f9f" },
+    { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
+    { name: "Introduction to Cloud Computing", url: "https://www.coursera.org/account/accomplishments/verify/O4EN4P7ZI6XV" },
+    { name: "Introduction to Agile Development and Scrum", url: "https://www.coursera.org/account/accomplishments/verify/PV26WR8KH5MX" },
+    { name: "Introduction to Linux and Shell Scripting", url: "https://www.coursera.org/account/accomplishments/verify/07JX8O7ZPDCY" },
+    { name: "Getting Started with Git and GitHub", url: "https://www.coursera.org/account/accomplishments/verify/6JZJJTDRFPBT" },
     { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" }
   ];
   const skillCategories = [{
