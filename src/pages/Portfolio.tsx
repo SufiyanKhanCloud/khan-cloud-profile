@@ -231,23 +231,23 @@ export default function Portfolio() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl" className="animate-scale-in" asChild>
+                <Button variant="hero" size="xl" className="animate-scale-in group" asChild>
                   <a href="/resume.pdf" download>
-                    <Download className="h-5 w-5" />
+                    <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
                     Download CV
                   </a>
                 </Button>
                 
-                <Button variant="glass" size="xl" asChild className="animate-scale-in">
+                <Button variant="glass" size="xl" asChild className="animate-scale-in group">
                   <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-5 w-5" />
+                    <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
                     View GitHub
                   </a>
                 </Button>
                 
-                <Button variant="glass" size="xl" asChild className="animate-scale-in">
+                <Button variant="glass" size="xl" asChild className="animate-scale-in group">
                   <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
                     LinkedIn
                   </a>
                 </Button>
@@ -480,30 +480,81 @@ export default function Portfolio() {
               opportunities to collaborate on exciting projects.
             </p>
             
-            <ContactForm />
+            <div className="max-w-xl mx-auto">
+              <ContactForm />
+            </div>
             
-            <p className="text-sm text-muted-foreground mt-4 mb-6">
-              If the form doesn't work, feel free to send me a direct email instead.
-            </p>
+            <div className="flex items-center justify-center gap-4 my-8">
+              <div className="h-px bg-gradient-hero w-16"></div>
+              <span className="text-muted-foreground text-sm font-medium">OR</span>
+              <div className="h-px bg-gradient-hero w-16"></div>
+            </div>
             
-            <div className="mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button variant="cta" size="xl" asChild className="animate-glow-pulse">
                 <a href="mailto:sufiyan@example.com">
                   <Mail className="h-5 w-5" />
-                  Or Send Direct Email
+                  Send Direct Email
                 </a>
               </Button>
+              
+              <div className="flex gap-3">
+                <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
+                  <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
+                  <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
       </AnimatedSection>
 
-        {/* Footer */}
-        <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border bg-muted/30 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-muted-foreground hover:text-foreground transition-colors">
-              © 2025 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
-            </p>
+        {/* Enhanced Footer */}
+        <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-gradient-to-br from-background via-muted/50 to-background relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-mesh opacity-30 pointer-events-none"></div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <div className="flex flex-col items-center space-y-6">
+              {/* Social Links */}
+              <div className="flex gap-4">
+                <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                  <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                  <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                  <a href="mailto:sufiyan@example.com">
+                    <Mail className="h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+              
+              {/* Divider */}
+              <div className="w-24 h-px bg-gradient-hero"></div>
+              
+              {/* Copyright */}
+              <p className="text-muted-foreground hover:text-foreground transition-colors text-center">
+                © 2025 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
+              </p>
+              
+              {/* Tech Stack Pills */}
+              <div className="flex flex-wrap gap-2 justify-center">
+                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium hover:bg-primary/20 transition-colors">React</span>
+                <span className="px-3 py-1 bg-secondary/10 text-secondary-foreground rounded-full text-xs font-medium hover:bg-secondary/20 transition-colors">TypeScript</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent-foreground rounded-full text-xs font-medium hover:bg-accent/20 transition-colors">Tailwind CSS</span>
+                <span className="px-3 py-1 bg-muted/20 text-muted-foreground rounded-full text-xs font-medium hover:bg-muted/30 transition-colors">Lovable</span>
+              </div>
+            </div>
           </div>
         </footer>
       </div>
