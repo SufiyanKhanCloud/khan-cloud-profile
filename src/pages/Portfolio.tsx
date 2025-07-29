@@ -533,7 +533,7 @@ export default function Portfolio() {
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
-                  <a href="mailto:sufiyan@example.com">
+                  <a href="mailto:sufiikhan980@gmail.com">
                     <Mail className="h-5 w-5" />
                   </a>
                 </Button>
