@@ -154,3 +154,45 @@ All colors MUST be HSL for consistent theming.
     @apply bg-background text-foreground font-inter;
   }
 }
+
+@layer utilities {
+  /* Smooth scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-lg border border-border/50;
+  }
+  
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-hero bg-clip-text text-transparent;
+  }
+  
+  /* Card hover lift effect */
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-elevated;
+  }
+  
+  /* Subtle glow on hover */
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-glow;
+  }
+  
+  /* Smooth transitions for all properties */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Spring transition */
+  .transition-spring {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  /* Focus visible styling */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+}
