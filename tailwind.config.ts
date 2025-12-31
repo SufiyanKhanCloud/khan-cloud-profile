@@ -137,22 +137,48 @@ export default {
 				'bounce-soft': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-5px)' }
+				},
+				'shimmer': {
+					'0%': { backgroundPosition: '-200% 0' },
+					'100%': { backgroundPosition: '200% 0' }
+				},
+				'pulse-subtle': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'rotate-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'float-gentle': {
+					'0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+					'25%': { transform: 'translateY(-5px) rotate(1deg)' },
+					'75%': { transform: 'translateY(3px) rotate(-1deg)' }
+				},
+				'reveal-up': {
+					'0%': { opacity: '0', transform: 'translateY(40px)', filter: 'blur(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out',
+				'fade-in': 'fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+				'scale-in': 'scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
 				'typewriter': 'typewriter 2s steps(20) forwards',
 				'blink': 'blink 1s infinite',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-				'slide-up': 'slide-up 0.6s ease-out',
-				'slide-in-left': 'slide-in-left 0.6s ease-out',
-				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'zoom-in': 'zoom-in 0.5s ease-out',
+				'slide-up': 'slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+				'slide-in-left': 'slide-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+				'slide-in-right': 'slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+				'zoom-in': 'zoom-in 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
 				'float': 'float 3s ease-in-out infinite',
-				'bounce-soft': 'bounce-soft 2s infinite'
+				'bounce-soft': 'bounce-soft 2s infinite',
+				'shimmer': 'shimmer 2s linear infinite',
+				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'float-gentle': 'float-gentle 6s ease-in-out infinite',
+				'reveal-up': 'reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
 			},
 			perspective: {
 				'1000': '1000px',

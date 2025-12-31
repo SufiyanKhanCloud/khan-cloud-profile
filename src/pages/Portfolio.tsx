@@ -12,6 +12,10 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PageLoader } from "@/components/PageLoader";
 import { LazyImage } from "@/components/LazyImage";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
+import { FloatingShapes } from "@/components/FloatingShapes";
+import { MagneticButton } from "@/components/MagneticButton";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -110,9 +114,10 @@ export default function Portfolio() {
   return (
     <>
       <PageLoader />
+      <ScrollProgress />
       <div className="min-h-screen bg-background font-inter relative">
-        {/* Enhanced Background with Performance Optimization */}
-        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none will-change-transform" />
+        {/* Enhanced Parallax Background */}
+        <ParallaxBackground />
         <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
         
         {/* Enhanced Modern Navigation */}
@@ -204,53 +209,73 @@ export default function Portfolio() {
 
       {/* Hero Section */}
       <AnimatedSection id="hero">
-        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative min-h-[85vh] flex items-center">
+          <FloatingShapes />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="mb-8">
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated">
+              {/* Profile Image with enhanced animation */}
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated relative group">
+                <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
                 <LazyImage 
                   src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
                   alt="Sufiyan Khan" 
-                  className="w-full h-full rounded-full object-cover" 
+                  className="w-full h-full rounded-full object-cover relative z-10" 
                 />
               </div>
               
-              <h1 className="text-4xl sm:text-6xl font-bold mb-4 animate-fade-in">
+              {/* Name with refined animation */}
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 animate-reveal-up">
                 <span className="bg-gradient-hero bg-clip-text text-transparent">
                   Sufiyan Khan
                 </span>
               </h1>
               
-              <div className="text-xl sm:text-2xl text-muted-foreground mb-8 h-16 flex items-center justify-center">
+              {/* Typewriter */}
+              <div className="text-xl sm:text-2xl text-muted-foreground mb-8 h-16 flex items-center justify-center animate-fade-in" style={{ animationDelay: '200ms' }}>
                 <TypewriterEffect texts={typewriterTexts} className="font-medium" />
               </div>
               
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+              {/* Description */}
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in" style={{ animationDelay: '400ms' }}>
                 Computer Science undergraduate from the University of Karachi, passionate about 
                 building scalable cloud systems and automating infrastructure.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl" className="animate-scale-in group" asChild>
-                  <a href="/resume.pdf" download>
-                    <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                    Download CV
-                  </a>
-                </Button>
+              {/* CTA Buttons with Magnetic Effect */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '600ms' }}>
+                <MagneticButton strength={0.2}>
+                  <Button variant="hero" size="xl" className="group shadow-strong hover:shadow-glow transition-shadow duration-300" asChild>
+                    <a href="/resume.pdf" download>
+                      <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                      Download CV
+                    </a>
+                  </Button>
+                </MagneticButton>
                 
-                <Button variant="glass" size="xl" asChild className="animate-scale-in group">
-                  <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                    View GitHub
-                  </a>
-                </Button>
+                <MagneticButton strength={0.2}>
+                  <Button variant="glass" size="xl" asChild className="group">
+                    <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                      View GitHub
+                    </a>
+                  </Button>
+                </MagneticButton>
                 
-                <Button variant="glass" size="xl" asChild className="animate-scale-in group">
-                  <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                    LinkedIn
-                  </a>
-                </Button>
+                <MagneticButton strength={0.2}>
+                  <Button variant="glass" size="xl" asChild className="group">
+                    <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                      LinkedIn
+                    </a>
+                  </Button>
+                </MagneticButton>
+              </div>
+              
+              {/* Scroll indicator */}
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-soft opacity-50">
+                <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
+                  <div className="w-1 h-2 bg-muted-foreground/50 rounded-full mt-2 animate-pulse-subtle" />
+                </div>
               </div>
             </div>
           </div>
@@ -463,19 +488,22 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <AnimatedSection id="contact" animation="zoom-in" delay={700}>
-        <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+          
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Mail className="h-6 w-6 text-primary animate-bounce-soft" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <div className="w-12 h-0.5 bg-gradient-hero animate-pulse-subtle"></div>
+                <Mail className="h-6 w-6 text-primary animate-float-gentle" />
+                <div className="w-12 h-0.5 bg-gradient-hero animate-pulse-subtle"></div>
               </div>
               <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
                 Let's Connect
               </h2>
             </div>
-            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
               I'm always interested in discussing DevOps, cloud technologies, and 
               opportunities to collaborate on exciting projects.
             </p>
@@ -484,31 +512,37 @@ export default function Portfolio() {
               <ContactForm />
             </div>
             
-            <div className="flex items-center justify-center gap-4 my-8">
-              <div className="h-px bg-gradient-hero w-16"></div>
-              <span className="text-muted-foreground text-sm font-medium">OR</span>
-              <div className="h-px bg-gradient-hero w-16"></div>
+            <div className="flex items-center justify-center gap-4 my-10">
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent w-24"></div>
+              <span className="text-muted-foreground text-sm font-medium px-4">OR</span>
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent w-24"></div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="cta" size="xl" asChild className="animate-glow-pulse">
-                <a href="mailto:sufiyan@example.com">
-                  <Mail className="h-5 w-5" />
-                  Send Direct Email
-                </a>
-              </Button>
+              <MagneticButton strength={0.15}>
+                <Button variant="cta" size="xl" asChild className="shadow-strong hover:shadow-glow transition-shadow duration-300">
+                  <a href="mailto:sufiikhan980@gmail.com">
+                    <Mail className="h-5 w-5" />
+                    Send Direct Email
+                  </a>
+                </Button>
+              </MagneticButton>
               
               <div className="flex gap-3">
-                <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
-                  <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                </Button>
-                <Button variant="ghost" size="icon" asChild className="hover:scale-110 transition-transform">
-                  <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-5 w-5" />
-                  </a>
-                </Button>
+                <MagneticButton strength={0.3}>
+                  <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                    <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </Button>
+                </MagneticButton>
+                <MagneticButton strength={0.3}>
+                  <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                    <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5" />
+                    </a>
+                  </Button>
+                </MagneticButton>
               </div>
             </div>
           </div>
