@@ -40,6 +40,12 @@ export default function Portfolio() {
     githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
     imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
     technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
+  }, {
+    title: "Smart Parking System (IoT-Based)",
+    description: "IoT-based parking system using ESP32 and sensors to monitor real-time slot availability and automate gate control with mobile dashboard.",
+    githubUrl: "https://github.com/SufiyanKhanCloud/Smart-Parking-System",
+    imageUrl: "/lovable-uploads/smart-parking-system.jpeg",
+    technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"]
   }];
   const certifications = [
     { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
