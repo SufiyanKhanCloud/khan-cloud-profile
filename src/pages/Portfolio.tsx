@@ -16,6 +16,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
+import { FloatingTechLogos } from "@/components/FloatingTechLogos";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -121,6 +122,7 @@ export default function Portfolio() {
     <>
       <PageLoader />
       <ScrollProgress />
+      <FloatingTechLogos />
       <div className="min-h-screen bg-background font-inter relative">
         {/* Enhanced Parallax Background */}
         <ParallaxBackground />
