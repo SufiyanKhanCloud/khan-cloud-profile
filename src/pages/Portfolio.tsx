@@ -23,6 +23,12 @@ export default function Portfolio() {
   
   const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const projects = [{
+    title: "CI/CD Pipeline for Django Notes App",
+    description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
+    githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
+    imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
+    technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
+  }, {
     title: "Dockerized Expense Tracker",
     description: "Java Spring Boot + MySQL app with Docker Compose. Deployed to AWS EC2 with persistent volumes.",
     githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/Expenses-Tracker-WebApp",
@@ -34,12 +40,6 @@ export default function Portfolio() {
     githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/two-tier-flask-app",
     imageUrl: "/lovable-uploads/f6a1f223-b480-4572-9191-d2ce90198d22.png",
     technologies: ["Flask", "MySQL", "Docker", "Microservices"]
-  }, {
-    title: "CI/CD Pipeline for Django Notes App",
-    description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
-    imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
-    technologies: ["Django", "Jenkins", "CI/CD", "Groovy", "AWS"]
   }, {
     title: "Smart Parking System (IoT-Based)",
     description: "IoT-based parking system using ESP32 and sensors to monitor real-time slot availability and automate gate control with mobile dashboard.",
