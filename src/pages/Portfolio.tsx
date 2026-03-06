@@ -51,7 +51,7 @@ export default function Portfolio() {
     title: "MAS-Simulator (Queueing Theory Engine)",
     description: "A high-performance simulation platform for analyzing M/M/1, M/M/S, and M/G/1 queueing models. Features optimized multi-stage Docker builds, non-root container security, real-time statistical engine, and priority scheduling analysis.",
     githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
-    liveUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
+    liveUrl: "https://mas-simulator-calculator.vercel.app/",
     imageUrl: "/lovable-uploads/mas-simulator.png",
     technologies: ["Next.js", "TypeScript", "Docker", "Tailwind CSS"]
   }];
