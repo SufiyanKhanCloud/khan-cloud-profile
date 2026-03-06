@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,6 +19,7 @@ import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
 import { FloatingTechLogos } from "@/components/FloatingTechLogos";
 import { WorkExperience } from "@/components/WorkExperience";
+import { StatsCounter } from "@/components/StatsCounter";
 import { Briefcase } from "lucide-react";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -133,7 +135,7 @@ export default function Portfolio() {
       <PageLoader />
       <ScrollProgress />
       <FloatingTechLogos />
-      <div className="min-h-screen bg-background font-inter relative">
+      <div className="min-h-screen bg-background font-body relative grain-overlay">
         {/* Enhanced Parallax Background */}
         <ParallaxBackground />
         <div className="fixed inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 pointer-events-none" />
@@ -224,85 +226,115 @@ export default function Portfolio() {
         
         {/* Scroll to Top */}
         <ScrollToTop />
-
+      <main>
       {/* Hero Section */}
       <AnimatedSection id="hero">
-        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative min-h-[85vh] flex items-center">
+        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative min-h-[85vh] flex items-center" role="banner">
           <FloatingShapes />
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="mb-8">
-              {/* Profile Image with enhanced animation */}
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated relative group">
-                <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
-                <LazyImage 
-                  src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
-                  alt="Sufiyan Khan" 
-                  className="w-full h-full rounded-full object-cover relative z-10" 
-                />
-              </div>
-              
-              {/* Name with refined animation */}
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 animate-reveal-up">
-                <span className="bg-gradient-hero bg-clip-text text-transparent">
-                  Sufiyan Khan
-                </span>
-              </h1>
-              
-              {/* Typewriter */}
-              <div className="text-xl sm:text-2xl text-muted-foreground mb-8 h-16 flex items-center justify-center animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <TypewriterEffect texts={typewriterTexts} className="font-medium" />
-              </div>
-              
-              {/* Description */}
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in" style={{ animationDelay: '400ms' }}>
-                Computer Science undergraduate from the University of Karachi, passionate about 
-                building scalable cloud systems and automating infrastructure.
-              </p>
-              
-              {/* CTA Buttons with Magnetic Effect */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '600ms' }}>
-                <MagneticButton strength={0.2}>
-                  <Button variant="hero" size="xl" className="group shadow-strong hover:shadow-glow transition-shadow duration-300" asChild>
-                    <a href="/resume.pdf" download>
-                      <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                      Download CV
-                    </a>
-                  </Button>
-                </MagneticButton>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              {/* Left side - Text content */}
+              <motion.div 
+                className="flex-1 text-center lg:text-left"
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                  className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6"
+                >
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  Available for opportunities
+                </motion.div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 font-display leading-tight">
+                  <span className="text-foreground">Hi, I'm </span>
+                  <span className="bg-gradient-hero bg-clip-text text-transparent">
+                    Sufiyan Khan
+                  </span>
+                </h1>
                 
-                <MagneticButton strength={0.2}>
-                  <Button variant="glass" size="xl" asChild className="group">
-                    <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                      View GitHub
-                    </a>
-                  </Button>
-                </MagneticButton>
-                
-                <MagneticButton strength={0.2}>
-                  <Button variant="glass" size="xl" asChild className="group">
-                    <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                      LinkedIn
-                    </a>
-                  </Button>
-                </MagneticButton>
-              </div>
-              
-              {/* Scroll indicator */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-soft opacity-50">
-                <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-                  <div className="w-1 h-2 bg-muted-foreground/50 rounded-full mt-2 animate-pulse-subtle" />
+                <div className="text-xl sm:text-2xl text-muted-foreground mb-6 h-12 flex items-center justify-center lg:justify-start">
+                  <TypewriterEffect texts={typewriterTexts} className="font-medium" />
                 </div>
+                
+                <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
+                  Computer Science undergraduate from the University of Karachi, passionate about 
+                  building scalable cloud systems and automating infrastructure.
+                </p>
+                
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                >
+                  <MagneticButton strength={0.2}>
+                    <Button variant="hero" size="xl" className="group shadow-strong hover:shadow-glow transition-shadow duration-300" asChild>
+                      <a href="/resume.pdf" download>
+                        <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                        Download CV
+                      </a>
+                    </Button>
+                  </MagneticButton>
+                  
+                  <MagneticButton strength={0.2}>
+                    <Button variant="glass" size="xl" asChild className="group">
+                      <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
+                        <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                        View GitHub
+                      </a>
+                    </Button>
+                  </MagneticButton>
+                  
+                  <MagneticButton strength={0.2}>
+                    <Button variant="glass" size="xl" asChild className="group">
+                      <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                        LinkedIn
+                      </a>
+                    </Button>
+                  </MagneticButton>
+                </motion.div>
+              </motion.div>
+
+              {/* Right side - Profile image */}
+              <motion.div
+                className="flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated relative group">
+                  <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
+                  <LazyImage 
+                    src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
+                    alt="Sufiyan Khan - DevOps Engineer" 
+                    className="w-full h-full rounded-full object-cover relative z-10" 
+                  />
+                </div>
+              </motion.div>
+            </div>
+              
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-soft opacity-50">
+              <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
+                <div className="w-1 h-2 bg-muted-foreground/50 rounded-full mt-2 animate-pulse-subtle" />
               </div>
             </div>
           </div>
         </section>
       </AnimatedSection>
 
+      {/* Stats Counter */}
+      <StatsCounter />
+
       {/* About Section */}
       <AnimatedSection id="about" animation="slide-in-left" delay={200}>
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative" aria-label="About Sufiyan Khan">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -341,7 +373,7 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <AnimatedSection id="projects" animation="zoom-in" delay={300}>
-        <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 relative" aria-label="Featured projects">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -573,6 +605,7 @@ export default function Portfolio() {
           </div>
         </section>
       </AnimatedSection>
+      </main>
 
         {/* Enhanced Footer */}
         <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border bg-gradient-to-br from-background via-muted/50 to-background relative overflow-hidden">
@@ -603,7 +636,7 @@ export default function Portfolio() {
               
               {/* Copyright */}
               <p className="text-muted-foreground hover:text-foreground transition-colors text-center">
-                © 2025 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
+                © 2026 Sufiyan Khan. Built with React, TypeScript, and Tailwind CSS.
               </p>
               
               {/* Tech Stack Pills */}
