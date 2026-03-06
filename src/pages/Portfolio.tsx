@@ -17,6 +17,8 @@ import { ParallaxBackground } from "@/components/ParallaxBackground";
 import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
 import { FloatingTechLogos } from "@/components/FloatingTechLogos";
+import { WorkExperience } from "@/components/WorkExperience";
+import { Briefcase } from "lucide-react";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -89,6 +91,7 @@ export default function Portfolio() {
   const navItems = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" }
@@ -326,6 +329,13 @@ export default function Portfolio() {
               </CardContent>
             </Card>
           </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Work Experience Section */}
+      <AnimatedSection id="experience" animation="slide-in-left" delay={200}>
+        <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
+          <WorkExperience />
         </section>
       </AnimatedSection>
 
