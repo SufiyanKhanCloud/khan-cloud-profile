@@ -47,6 +47,13 @@ export default function Portfolio() {
     githubUrl: "https://github.com/SufiyanKhanCloud/Smart-Parking-System",
     imageUrl: "/lovable-uploads/smart-parking-system.jpeg",
     technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"]
+  }, {
+    title: "MAS-Simulator (Queueing Theory Engine)",
+    description: "A high-performance simulation platform for analyzing M/M/1, M/M/S, and M/G/1 queueing models. Features optimized multi-stage Docker builds, non-root container security, real-time statistical engine, and priority scheduling analysis.",
+    githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
+    liveUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
+    imageUrl: "/lovable-uploads/mas-simulator.png",
+    technologies: ["Next.js", "TypeScript", "Docker", "Tailwind CSS"]
   }];
   const certifications = [
     { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
