@@ -22,7 +22,7 @@ export function ProjectCard({ title, description, githubUrl, imageUrl, technolog
         <img 
           src={imageUrl} 
           alt={`${title} screenshot`} 
-          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-110"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
