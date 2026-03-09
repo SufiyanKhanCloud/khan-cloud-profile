@@ -497,9 +497,11 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {skillCategories.map((category, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
-                    <SkillCard {...category} />
-                  </div>
+                  <TiltCard className="rounded-xl relative" maxTilt={6}>
+                    <SpotlightCard className="rounded-xl">
+                      <SkillCard {...category} />
+                    </SpotlightCard>
+                  </TiltCard>
                 </div>
               ))}
             </div>
