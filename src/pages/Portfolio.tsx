@@ -465,9 +465,11 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-4 hover:rotate-2 perspective-1000">
-                    <ProjectCard {...project} />
-                  </div>
+                  <TiltCard className="rounded-xl relative">
+                    <SpotlightCard className="rounded-xl">
+                      <ProjectCard {...project} />
+                    </SpotlightCard>
+                  </TiltCard>
                 </div>
               ))}
             </div>
