@@ -529,31 +529,33 @@ export default function Portfolio() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
                 <div key={index} className="group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
-                    <Card className="hover:shadow-elevated transition-all duration-500 bg-gradient-card border-border/50 group cursor-pointer h-full">
-                      <CardHeader className="pb-4">
-                        <div className="flex items-center gap-3">
-                          <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                          <CardTitle className="text-sm">{cert.name}</CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        {cert.url ? (
-                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300" asChild>
-                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                  <TiltCard className="rounded-xl relative h-full" maxTilt={6}>
+                    <SpotlightCard className="rounded-xl h-full">
+                      <Card className="hover:shadow-elevated transition-all duration-500 bg-gradient-card border-border/50 group cursor-pointer h-full">
+                        <CardHeader className="pb-4">
+                          <div className="flex items-center gap-3">
+                            <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                            <CardTitle className="text-sm">{cert.name}</CardTitle>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          {cert.url ? (
+                            <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300" asChild>
+                              <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-4 w-4" />
+                                Verify Certificate
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
                               <ExternalLink className="h-4 w-4" />
                               Verify Certificate
-                            </a>
-                          </Button>
-                        ) : (
-                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                            <ExternalLink className="h-4 w-4" />
-                            Verify Certificate
-                          </Button>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
+                            </Button>
+                          )}
+                        </CardContent>
+                      </Card>
+                    </SpotlightCard>
+                  </TiltCard>
                 </div>
               ))}
             </div>
