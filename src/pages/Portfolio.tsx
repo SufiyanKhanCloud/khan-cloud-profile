@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity } from "lucide-react";
+import { SpotlightCard } from "@/components/SpotlightCard";
+import { TiltCard } from "@/components/TiltCard";
+import { CursorGlow } from "@/components/CursorGlow";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -132,6 +135,7 @@ export default function Portfolio() {
   };
   return (
     <>
+      <CursorGlow />
       <PageLoader />
       <ScrollProgress />
       <FloatingTechLogos />
@@ -406,23 +410,27 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
                 >
-                  <Card className="bg-gradient-card border-border/50 hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 group h-full relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110" />
-                    <CardHeader className="pb-3 relative">
-                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 w-fit mb-3">
-                        <pillar.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
-                        {pillar.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0 relative">
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {pillar.description}
-                      </p>
-                    </CardContent>
-                  </Card>
+                  <TiltCard className="h-full relative rounded-xl">
+                    <SpotlightCard className="h-full rounded-xl">
+                      <Card className="bg-gradient-card border-border/50 hover:shadow-elevated transition-all duration-500 group h-full relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110" />
+                        <CardHeader className="pb-3 relative">
+                          <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 w-fit mb-3">
+                            <pillar.icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
+                            {pillar.title}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0 relative">
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {pillar.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </SpotlightCard>
+                  </TiltCard>
                 </motion.div>
               ))}
             </div>
@@ -457,9 +465,11 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-4 hover:rotate-2 perspective-1000">
-                    <ProjectCard {...project} />
-                  </div>
+                  <TiltCard className="rounded-xl relative">
+                    <SpotlightCard className="rounded-xl">
+                      <ProjectCard {...project} />
+                    </SpotlightCard>
+                  </TiltCard>
                 </div>
               ))}
             </div>
@@ -487,9 +497,11 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {skillCategories.map((category, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
-                    <SkillCard {...category} />
-                  </div>
+                  <TiltCard className="rounded-xl relative" maxTilt={6}>
+                    <SpotlightCard className="rounded-xl">
+                      <SkillCard {...category} />
+                    </SpotlightCard>
+                  </TiltCard>
                 </div>
               ))}
             </div>
@@ -517,31 +529,33 @@ export default function Portfolio() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
                 <div key={index} className="group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className="transform transition-all duration-500 hover:scale-105 hover:-translate-y-2 hover:rotate-1 perspective-1000">
-                    <Card className="hover:shadow-elevated transition-all duration-500 bg-gradient-card border-border/50 group cursor-pointer h-full">
-                      <CardHeader className="pb-4">
-                        <div className="flex items-center gap-3">
-                          <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
-                          <CardTitle className="text-sm">{cert.name}</CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        {cert.url ? (
-                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300" asChild>
-                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                  <TiltCard className="rounded-xl relative h-full" maxTilt={6}>
+                    <SpotlightCard className="rounded-xl h-full">
+                      <Card className="hover:shadow-elevated transition-all duration-500 bg-gradient-card border-border/50 group cursor-pointer h-full">
+                        <CardHeader className="pb-4">
+                          <div className="flex items-center gap-3">
+                            <Award className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                            <CardTitle className="text-sm">{cert.name}</CardTitle>
+                          </div>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          {cert.url ? (
+                            <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300" asChild>
+                              <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-4 w-4" />
+                                Verify Certificate
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
                               <ExternalLink className="h-4 w-4" />
                               Verify Certificate
-                            </a>
-                          </Button>
-                        ) : (
-                          <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                            <ExternalLink className="h-4 w-4" />
-                            Verify Certificate
-                          </Button>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
+                            </Button>
+                          )}
+                        </CardContent>
+                      </Card>
+                    </SpotlightCard>
+                  </TiltCard>
                 </div>
               ))}
             </div>
