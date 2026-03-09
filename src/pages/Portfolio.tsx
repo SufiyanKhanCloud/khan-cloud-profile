@@ -135,6 +135,7 @@ export default function Portfolio() {
   };
   return (
     <>
+      <CursorGlow />
       <PageLoader />
       <ScrollProgress />
       <FloatingTechLogos />
