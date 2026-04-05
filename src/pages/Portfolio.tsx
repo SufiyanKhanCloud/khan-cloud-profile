@@ -355,11 +355,7 @@ export default function Portfolio() {
             <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
               <CardContent className="p-8">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  I'm a CS student with a strong interest in scalable cloud systems, CI/CD automation, 
-                  and DevOps workflows. I work mostly in Linux environments and enjoy containerizing 
-                  and deploying projects on cloud platforms like AWS. Through hands-on projects and 
-                  IBM certifications, I've developed expertise in Docker, Jenkins, and infrastructure 
-                  automation while building a foundation for modern DevOps practices.
+                  While most CS students are doing tutorials, I've been architecting production infrastructure. At Teknoloje Solutions I deployed a Zero-Trust WireGuard VPN on Windows Server, set up an enterprise Git platform for 15+ developers, built ransomware-resistant automated backup systems, and reduced manual administrative overhead by 5+ hours per week. I work across Linux, Windows Server, Docker, Terraform, GitHub Actions, and AWS. I don't just learn tools. I use them on systems that cannot go down.
                 </p>
               </CardContent>
             </Card>
