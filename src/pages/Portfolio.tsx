@@ -523,7 +523,39 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
+              {featuredProjects.map((project, index) => (
+                <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
+                  <TiltCard className="rounded-xl relative">
+                    <SpotlightCard className="rounded-xl">
+                      <ProjectCard {...project} />
+                    </SpotlightCard>
+                  </TiltCard>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Earlier Projects Section */}
+      <AnimatedSection animation="slide-up" delay={350}>
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative" aria-label="Earlier projects">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <FolderArchive className="h-6 w-6 text-primary animate-bounce-soft" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Earlier Projects
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Foundation projects that built my engineering fundamentals
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {earlierProjects.map((project, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
                   <TiltCard className="rounded-xl relative">
                     <SpotlightCard className="rounded-xl">
