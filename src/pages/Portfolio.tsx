@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity } from "lucide-react";
+import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity, FolderArchive } from "lucide-react";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { TiltCard } from "@/components/TiltCard";
 import { CursorGlow } from "@/components/CursorGlow";
@@ -30,7 +30,33 @@ export default function Portfolio() {
   const [isScrolled, setIsScrolled] = useState(false);
   
   const typewriterTexts = ["DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
-  const projects = [{
+  const featuredProjects = [{
+    title: "Zero-Trust WireGuard VPN Infrastructure",
+    description: "Production Windows Server was exposed via NAT port-forwarding. After detecting a live brute-force attack from an external IP, I replaced the entire setup with a Zero-Trust WireGuard VPN. Implemented asymmetric key pairs for every developer, strict firewall rules dropping all public traffic, and a secure onboarding process. Zero unauthorized access attempts have succeeded since deployment.",
+    technologies: ["WireGuard", "Windows Server", "Zero-Trust", "Firewall", "PowerShell", "Networking"]
+  }, {
+    title: "Enterprise Gitea Version Control Platform",
+    description: "The company had no proper version control system. I deployed a self-hosted Gitea instance on Windows Server for 15+ developers, migrated the database from SQLite to MS SQL Server, implemented Role-Based Access Control and multi-tenancy, and configured custom repository limits benchmarked against GitHub and GitLab standards.",
+    technologies: ["Gitea", "Windows Server", "MS SQL Server", "RBAC", "Git", "DevOps"]
+  }, {
+    title: "Ransomware-Resistant Automated Backup System",
+    description: "Production backups were stored on SMB mapped drives, meaning ransomware could encrypt both the server and backups simultaneously. I replaced this with a PowerShell vaulting engine that opens a temporary encrypted FTP connection, transmits compressed archives, then severs the connection immediately. The production server now has zero persistent network access to backup storage.",
+    technologies: ["PowerShell", "Windows Server", "FTP", "Cybersecurity", "Disaster Recovery", "Automation"]
+  }, {
+    title: "Production APM Pipeline with Prometheus and Grafana",
+    description: "Built a complete Application Performance Monitoring pipeline for a Next.js application. Created a custom prom-client exporter exposing live metrics, configured Docker host networking with host.docker.internal routing, wrote custom PromQL queries visualizing both server RAM and business logic metrics in a single Grafana dashboard. Exported dashboard as JSON for GitOps version control.",
+    githubUrl: "https://github.com/SufiyanKhanCloud",
+    technologies: ["Prometheus", "Grafana", "Docker", "Next.js", "Observability", "PromQL"]
+  }, {
+    title: "MAS-Simulator (Queueing Theory Engine)",
+    description: "A high-performance simulation platform for analyzing M/M/1, M/M/S, and M/G/1 queueing models. Features optimized multi-stage Docker builds, non-root container security, real-time statistical engine, and priority scheduling analysis.",
+    githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
+    liveUrl: "https://mas-simulator-calculator.vercel.app/",
+    imageUrl: "/lovable-uploads/mas-simulator.png",
+    technologies: ["Next.js", "TypeScript", "Docker", "Tailwind CSS"]
+  }];
+
+  const earlierProjects = [{
     title: "CI/CD Pipeline for Django Notes App",
     description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
     githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
@@ -54,13 +80,6 @@ export default function Portfolio() {
     githubUrl: "https://github.com/SufiyanKhanCloud/Smart-Parking-System",
     imageUrl: "/lovable-uploads/smart-parking-system.jpeg",
     technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"]
-  }, {
-    title: "MAS-Simulator (Queueing Theory Engine)",
-    description: "A high-performance simulation platform for analyzing M/M/1, M/M/S, and M/G/1 queueing models. Features optimized multi-stage Docker builds, non-root container security, real-time statistical engine, and priority scheduling analysis.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
-    liveUrl: "https://mas-simulator-calculator.vercel.app/",
-    imageUrl: "/lovable-uploads/mas-simulator.png",
-    technologies: ["Next.js", "TypeScript", "Docker", "Tailwind CSS"]
   }];
   const certifications = [
     { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
@@ -504,7 +523,39 @@ export default function Portfolio() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
+              {featuredProjects.map((project, index) => (
+                <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
+                  <TiltCard className="rounded-xl relative">
+                    <SpotlightCard className="rounded-xl">
+                      <ProjectCard {...project} />
+                    </SpotlightCard>
+                  </TiltCard>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Earlier Projects Section */}
+      <AnimatedSection animation="slide-up" delay={350}>
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative" aria-label="Earlier projects">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+                <FolderArchive className="h-6 w-6 text-primary animate-bounce-soft" />
+                <div className="w-12 h-0.5 bg-gradient-hero"></div>
+              </div>
+              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
+                Earlier Projects
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Foundation projects that built my engineering fundamentals
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {earlierProjects.map((project, index) => (
                 <div key={index} className="animate-slide-up group" style={{ animationDelay: `${index * 150}ms` }}>
                   <TiltCard className="rounded-xl relative">
                     <SpotlightCard className="rounded-xl">
