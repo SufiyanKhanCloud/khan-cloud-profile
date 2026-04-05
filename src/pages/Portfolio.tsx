@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity } from "lucide-react";
+import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity, FolderArchive } from "lucide-react";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { TiltCard } from "@/components/TiltCard";
 import { CursorGlow } from "@/components/CursorGlow";
