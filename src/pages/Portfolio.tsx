@@ -335,6 +335,52 @@ export default function Portfolio() {
       {/* Stats Counter */}
       <StatsCounter />
 
+      {/* Viral LinkedIn Post - Community Impact */}
+      <AnimatedSection animation="slide-up" delay={200}>
+        <section className="pb-16 px-4 sm:px-6 lg:px-8 relative">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-accent text-accent-foreground shadow-elevated hover:shadow-strong transition-all duration-500 hover:-translate-y-2">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <Lightbulb className="h-6 w-6 animate-bounce-soft" />
+                  <CardTitle className="text-xl">Viral LinkedIn Post Achievement</CardTitle>
+                </div>
+                <CardDescription className="text-accent-foreground/80">
+                  "Linux and Networking for DevOps" - Educational Content
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                  <div className="group hover:scale-105 transition-transform">
+                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">26,000+</div>
+                    <div className="text-sm text-accent-foreground/80">Impressions</div>
+                  </div>
+                  <div className="group hover:scale-105 transition-transform">
+                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">14,094</div>
+                    <div className="text-sm text-accent-foreground/80">Members Engaged</div>
+                  </div>
+                  <div className="group hover:scale-105 transition-transform">
+                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">135+</div>
+                    <div className="text-sm text-accent-foreground/80">New Followers</div>
+                  </div>
+                  <div className="group hover:scale-105 transition-transform">
+                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">159</div>
+                    <div className="text-sm text-accent-foreground/80">Reactions</div>
+                  </div>
+                </div>
+                <div className="mt-6 p-4 bg-accent-foreground/10 rounded-lg hover:bg-accent-foreground/15 transition-colors">
+                  <p className="text-sm text-accent-foreground/90">
+                    Actively participating in DevOps communities and sharing my learning journey 
+                    to help fellow developers understand Linux fundamentals and networking concepts 
+                    essential for DevOps roles.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* About Section */}
       <AnimatedSection id="about" animation="slide-in-left" delay={200}>
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative" aria-label="About Sufiyan Khan">
@@ -558,65 +604,6 @@ export default function Portfolio() {
         </section>
       </AnimatedSection>
 
-      {/* Extra-Curricular Section */}
-      <AnimatedSection animation="slide-in-left" delay={600}>
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                <Lightbulb className="h-6 w-6 text-primary animate-pulse" />
-                <div className="w-12 h-0.5 bg-gradient-hero"></div>
-              </div>
-              <h2 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent mb-4">
-                Community Impact
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Sharing knowledge and inspiring the next generation
-              </p>
-            </div>
-            <Card className="bg-gradient-accent text-accent-foreground shadow-elevated hover:shadow-strong transition-all duration-500 hover:-translate-y-2">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <Lightbulb className="h-6 w-6 animate-bounce-soft" />
-                  <CardTitle className="text-xl">Viral LinkedIn Post Achievement</CardTitle>
-                </div>
-                <CardDescription className="text-accent-foreground/80">
-                  "Linux and Networking for DevOps" - Educational Content
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                  <div className="group hover:scale-105 transition-transform">
-                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">26,000+</div>
-                    <div className="text-sm text-accent-foreground/80">Impressions</div>
-                  </div>
-                  <div className="group hover:scale-105 transition-transform">
-                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">14,094</div>
-                    <div className="text-sm text-accent-foreground/80">Members Engaged</div>
-                  </div>
-                  <div className="group hover:scale-105 transition-transform">
-                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">135+</div>
-                    <div className="text-sm text-accent-foreground/80">New Followers</div>
-                  </div>
-                  <div className="group hover:scale-105 transition-transform">
-                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">159</div>
-                    <div className="text-sm text-accent-foreground/80">Reactions</div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 p-4 bg-accent-foreground/10 rounded-lg hover:bg-accent-foreground/15 transition-colors">
-                  <p className="text-sm text-accent-foreground/90">
-                    Actively participating in DevOps communities and sharing my learning journey 
-                    to help fellow developers understand Linux fundamentals and networking concepts 
-                    essential for DevOps roles.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-      </AnimatedSection>
 
       {/* Contact Section */}
       <AnimatedSection id="contact" animation="zoom-in" delay={700}>
