@@ -29,7 +29,7 @@ export default function Portfolio() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
+  const typewriterTexts = ["DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const projects = [{
     title: "CI/CD Pipeline for Django Notes App",
     description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
@@ -266,8 +266,7 @@ export default function Portfolio() {
                 </div>
                 
                 <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-                  Computer Science undergraduate from the University of Karachi, passionate about 
-                  building scalable cloud systems and automating infrastructure.
+                  Final-year CS student at UBIT building and fixing production infrastructure at Teknoloje Solutions. I deploy real systems, solve real problems, and document everything.
                 </p>
                 
                 <motion.div 
@@ -356,11 +355,7 @@ export default function Portfolio() {
             <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
               <CardContent className="p-8">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  I'm a CS student with a strong interest in scalable cloud systems, CI/CD automation, 
-                  and DevOps workflows. I work mostly in Linux environments and enjoy containerizing 
-                  and deploying projects on cloud platforms like AWS. Through hands-on projects and 
-                  IBM certifications, I've developed expertise in Docker, Jenkins, and infrastructure 
-                  automation while building a foundation for modern DevOps practices.
+                  While most CS students are doing tutorials, I've been architecting production infrastructure. At Teknoloje Solutions I deployed a Zero-Trust WireGuard VPN on Windows Server, set up an enterprise Git platform for 15+ developers, built ransomware-resistant automated backup systems, and reduced manual administrative overhead by 5+ hours per week. I work across Linux, Windows Server, Docker, Terraform, GitHub Actions, and AWS. I don't just learn tools. I use them on systems that cannot go down.
                 </p>
               </CardContent>
             </Card>
