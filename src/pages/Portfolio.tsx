@@ -29,7 +29,7 @@ export default function Portfolio() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  const typewriterTexts = ["Aspiring DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
+  const typewriterTexts = ["DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const projects = [{
     title: "CI/CD Pipeline for Django Notes App",
     description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
