@@ -266,8 +266,7 @@ export default function Portfolio() {
                 </div>
                 
                 <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-                  Computer Science undergraduate from the University of Karachi, passionate about 
-                  building scalable cloud systems and automating infrastructure.
+                  Final-year CS student at UBIT building and fixing production infrastructure at Teknoloje Solutions. I deploy real systems, solve real problems, and document everything.
                 </p>
                 
                 <motion.div 
