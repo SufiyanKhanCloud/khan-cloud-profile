@@ -33,20 +33,24 @@ export default function Portfolio() {
   const featuredProjects = [{
     title: "Zero-Trust WireGuard VPN Infrastructure",
     description: "Production Windows Server was exposed via NAT port-forwarding. After detecting a live brute-force attack from an external IP, I replaced the entire setup with a Zero-Trust WireGuard VPN. Implemented asymmetric key pairs for every developer, strict firewall rules dropping all public traffic, and a secure onboarding process. Zero unauthorized access attempts have succeeded since deployment.",
-    technologies: ["WireGuard", "Windows Server", "Zero-Trust", "Firewall", "PowerShell", "Networking"]
+    technologies: ["WireGuard", "Windows Server", "Zero-Trust", "Firewall", "PowerShell", "Networking"],
+    hideImage: true
   }, {
     title: "Enterprise Gitea Version Control Platform",
     description: "The company had no proper version control system. I deployed a self-hosted Gitea instance on Windows Server for 15+ developers, migrated the database from SQLite to MS SQL Server, implemented Role-Based Access Control and multi-tenancy, and configured custom repository limits benchmarked against GitHub and GitLab standards.",
-    technologies: ["Gitea", "Windows Server", "MS SQL Server", "RBAC", "Git", "DevOps"]
+    technologies: ["Gitea", "Windows Server", "MS SQL Server", "RBAC", "Git", "DevOps"],
+    hideImage: true
   }, {
     title: "Ransomware-Resistant Automated Backup System",
     description: "Production backups were stored on SMB mapped drives, meaning ransomware could encrypt both the server and backups simultaneously. I replaced this with a PowerShell vaulting engine that opens a temporary encrypted FTP connection, transmits compressed archives, then severs the connection immediately. The production server now has zero persistent network access to backup storage.",
-    technologies: ["PowerShell", "Windows Server", "FTP", "Cybersecurity", "Disaster Recovery", "Automation"]
+    technologies: ["PowerShell", "Windows Server", "FTP", "Cybersecurity", "Disaster Recovery", "Automation"],
+    hideImage: true
   }, {
     title: "Production APM Pipeline with Prometheus and Grafana",
     description: "Built a complete Application Performance Monitoring pipeline for a Next.js application. Created a custom prom-client exporter exposing live metrics, configured Docker host networking with host.docker.internal routing, wrote custom PromQL queries visualizing both server RAM and business logic metrics in a single Grafana dashboard. Exported dashboard as JSON for GitOps version control.",
     githubUrl: "https://github.com/SufiyanKhanCloud",
-    technologies: ["Prometheus", "Grafana", "Docker", "Next.js", "Observability", "PromQL"]
+    technologies: ["Prometheus", "Grafana", "Docker", "Next.js", "Observability", "PromQL"],
+    hideImage: true
   }, {
     title: "MAS-Simulator (Queueing Theory Engine)",
     description: "A high-performance simulation platform for analyzing M/M/1, M/M/S, and M/G/1 queueing models. Features optimized multi-stage Docker builds, non-root container security, real-time statistical engine, and priority scheduling analysis.",
