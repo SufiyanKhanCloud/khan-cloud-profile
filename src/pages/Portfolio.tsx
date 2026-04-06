@@ -95,25 +95,25 @@ export default function Portfolio() {
     { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" }
   ];
   const skillCategories = [{
-    icon: Terminal,
-    title: "DevOps Tools",
-    skills: ["Docker", "Git", "GitHub", "GitLab", "Jenkins", "CI/CD", "Shell Scripting"]
-  }, {
     icon: Cloud,
-    title: "Cloud & Infrastructure",
-    skills: ["AWS EC2", "VirtualBox", "VMware", "Infrastructure as Code"]
+    title: "Infrastructure & Cloud",
+    skills: ["AWS (EC2, S3, VPC, IAM)", "Windows Server", "Linux (Ubuntu/Debian)"]
+  }, {
+    icon: Terminal,
+    title: "DevOps & Automation",
+    skills: ["Docker", "GitHub Actions", "Jenkins", "Gitea", "Git", "PowerShell", "Bash"]
   }, {
     icon: Server,
-    title: "Operating Systems",
-    skills: ["Linux (Ubuntu)", "Windows", "System Administration"]
+    title: "Networking & Security",
+    skills: ["WireGuard", "IIS", "SSL/TLS", "DNS", "Firewall Rules"]
   }, {
     icon: Code,
-    title: "Programming",
-    skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
+    title: "IaC & Config",
+    skills: ["Terraform", "Ansible", "YAML"]
   }, {
-    icon: Lightbulb,
-    title: "Additional Skills",
-    skills: ["Prompt Engineering", "Automation", "Analytical Skills"]
+    icon: Activity,
+    title: "Observability",
+    skills: ["Prometheus", "Grafana", "PromQL"]
   }];
 
   // Navigation logic
