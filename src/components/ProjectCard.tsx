@@ -10,15 +10,16 @@ interface ProjectCardProps {
   imageUrl?: string;
   technologies: string[];
   liveUrl?: string;
+  hideImage?: boolean;
 }
 
-export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl }: ProjectCardProps) {
+export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl, hideImage }: ProjectCardProps) {
   return (
     <Card className="group overflow-hidden border-border/50 bg-gradient-card hover:shadow-elevated transition-all duration-500 hover:-translate-y-3 relative h-full">
       {/* Subtle glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-lg" />
       
-      {imageUrl ? (
+      {hideImage ? null : imageUrl ? (
         <div className="aspect-video overflow-hidden relative">
           <img 
             src={imageUrl} 
