@@ -87,6 +87,7 @@ export default function Portfolio() {
     technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"]
   }];
   const certifications = [
+    { name: "AWS Cloud Practitioner — In Progress", url: "" },
     { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
     { name: "Introduction to Cloud Computing", url: "https://www.coursera.org/account/accomplishments/verify/O4EN4P7ZI6XV" },
     { name: "Introduction to Agile Development and Scrum", url: "https://www.coursera.org/account/accomplishments/verify/PV26WR8KH5MX" },
@@ -95,25 +96,25 @@ export default function Portfolio() {
     { name: "Google Prompting Essentials Specialization", url: "https://coursera.org/share/08a0bed6aea58b7d0c4f231c591be479" }
   ];
   const skillCategories = [{
-    icon: Terminal,
-    title: "DevOps Tools",
-    skills: ["Docker", "Git", "GitHub", "GitLab", "Jenkins", "CI/CD", "Shell Scripting"]
-  }, {
     icon: Cloud,
-    title: "Cloud & Infrastructure",
-    skills: ["AWS EC2", "VirtualBox", "VMware", "Infrastructure as Code"]
+    title: "Infrastructure & Cloud",
+    skills: ["AWS (EC2, S3, VPC, IAM)", "Windows Server", "Linux (Ubuntu/Debian)"]
+  }, {
+    icon: Terminal,
+    title: "DevOps & Automation",
+    skills: ["Docker", "GitHub Actions", "Jenkins", "Gitea", "Git", "PowerShell", "Bash"]
   }, {
     icon: Server,
-    title: "Operating Systems",
-    skills: ["Linux (Ubuntu)", "Windows", "System Administration"]
+    title: "Networking & Security",
+    skills: ["WireGuard", "IIS", "SSL/TLS", "DNS", "Firewall Rules"]
   }, {
     icon: Code,
-    title: "Programming",
-    skills: ["Bash", "Python (basic)", "Groovy Scripts", "YAML"]
+    title: "IaC & Config",
+    skills: ["Terraform", "Ansible", "YAML"]
   }, {
-    icon: Lightbulb,
-    title: "Additional Skills",
-    skills: ["Prompt Engineering", "Automation", "Analytical Skills"]
+    icon: Activity,
+    title: "Observability",
+    skills: ["Prometheus", "Grafana", "PromQL"]
   }];
 
   // Navigation logic
@@ -419,7 +420,7 @@ export default function Portfolio() {
                 About Me
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Passionate developer building scalable solutions
+                Production infrastructure over tutorials.
               </p>
             </div>
             <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
@@ -455,17 +456,17 @@ export default function Portfolio() {
                 {
                   icon: Box,
                   title: "Containerization & Infrastructure",
-                  description: "Building reproducible, secure environments. Hands-on experience containerizing multi-tier applications with optimized multi-stage Docker builds and deploying across AWS.",
+                  description: "Multi-stage Docker builds for .NET applications and microservices on IIS.",
                 },
                 {
                   icon: GitMerge,
                   title: "CI/CD & Automation",
-                  description: "Eliminating manual toil through deployment pipelines. Leveraging GitHub Actions and shell scripting to accelerate development cycles and ensure reliable delivery.",
+                  description: "Zero-touch deployment pipelines and automated testing using GitHub Actions and Jenkins.",
                 },
                 {
                   icon: Activity,
                   title: "Hybrid SysAdmin & Observability",
-                  description: "Bridging Linux and Windows Server environments. Configuring IIS, strict network security, and full-stack monitoring using Prometheus, Grafana, and the ELK stack.",
+                  description: "Bridging legacy Windows Server environments with modern Linux infrastructure.",
                 },
               ].map((pillar, index) => (
                 <motion.div
@@ -644,9 +645,9 @@ export default function Portfolio() {
                               </a>
                             </Button>
                           ) : (
-                            <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                              <ExternalLink className="h-4 w-4" />
-                              Verify Certificate
+                            <Button variant="outline" size="sm" className="w-full opacity-70 cursor-default" disabled>
+                              <Award className="h-4 w-4" />
+                              In Progress
                             </Button>
                           )}
                         </CardContent>
@@ -679,8 +680,7 @@ export default function Portfolio() {
               </h2>
             </div>
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              I'm always interested in discussing DevOps, cloud technologies, and 
-              opportunities to collaborate on exciting projects.
+              Looking to set up CI/CD, secure your infrastructure, or automate your deployment pipeline? Let's talk.
             </p>
             
             <div className="max-w-xl mx-auto">
