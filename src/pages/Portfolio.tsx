@@ -645,9 +645,9 @@ export default function Portfolio() {
                               </a>
                             </Button>
                           ) : (
-                            <Button variant="outline" size="sm" className="w-full hover:bg-primary/10 transition-all duration-300">
-                              <ExternalLink className="h-4 w-4" />
-                              Verify Certificate
+                            <Button variant="outline" size="sm" className="w-full opacity-70 cursor-default" disabled>
+                              <Award className="h-4 w-4" />
+                              In Progress
                             </Button>
                           )}
                         </CardContent>
