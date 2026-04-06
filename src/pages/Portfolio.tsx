@@ -87,6 +87,7 @@ export default function Portfolio() {
     technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"]
   }];
   const certifications = [
+    { name: "AWS Cloud Practitioner — In Progress", url: "" },
     { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
     { name: "Introduction to Cloud Computing", url: "https://www.coursera.org/account/accomplishments/verify/O4EN4P7ZI6XV" },
     { name: "Introduction to Agile Development and Scrum", url: "https://www.coursera.org/account/accomplishments/verify/PV26WR8KH5MX" },
