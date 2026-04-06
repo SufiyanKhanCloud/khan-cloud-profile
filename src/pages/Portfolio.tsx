@@ -455,17 +455,17 @@ export default function Portfolio() {
                 {
                   icon: Box,
                   title: "Containerization & Infrastructure",
-                  description: "Building reproducible, secure environments. Hands-on experience containerizing multi-tier applications with optimized multi-stage Docker builds and deploying across AWS.",
+                  description: "Multi-stage Docker builds for .NET applications and microservices on IIS.",
                 },
                 {
                   icon: GitMerge,
                   title: "CI/CD & Automation",
-                  description: "Eliminating manual toil through deployment pipelines. Leveraging GitHub Actions and shell scripting to accelerate development cycles and ensure reliable delivery.",
+                  description: "Zero-touch deployment pipelines and automated testing using GitHub Actions and Jenkins.",
                 },
                 {
                   icon: Activity,
                   title: "Hybrid SysAdmin & Observability",
-                  description: "Bridging Linux and Windows Server environments. Configuring IIS, strict network security, and full-stack monitoring using Prometheus, Grafana, and the ELK stack.",
+                  description: "Bridging legacy Windows Server environments with modern Linux infrastructure.",
                 },
               ].map((pillar, index) => (
                 <motion.div
