@@ -680,8 +680,7 @@ export default function Portfolio() {
               </h2>
             </div>
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-              I'm always interested in discussing DevOps, cloud technologies, and 
-              opportunities to collaborate on exciting projects.
+              Looking to set up CI/CD, secure your infrastructure, or automate your deployment pipeline? Let's talk.
             </p>
             
             <div className="max-w-xl mx-auto">

@@ -13,7 +13,7 @@ const stats: StatItem[] = [
   { icon: FolderGit2, value: 5, suffix: "+", label: "Projects Built" },
   { icon: Award, value: 6, suffix: "", label: "Certifications" },
   { icon: Users, value: 26000, suffix: "+", label: "Content Impressions" },
-  { icon: TrendingUp, value: 40, suffix: "%", label: "Faster Deployments" },
+  { icon: TrendingUp, value: 5, suffix: "+", label: "Hours/Week Saved via Automation" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
