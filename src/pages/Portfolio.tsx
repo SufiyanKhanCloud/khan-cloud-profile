@@ -419,7 +419,7 @@ export default function Portfolio() {
                 About Me
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Passionate developer building scalable solutions
+                Production infrastructure over tutorials.
               </p>
             </div>
             <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
