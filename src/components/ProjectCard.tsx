@@ -14,7 +14,7 @@ interface ProjectCardProps {
   topBadge?: string;
 }
 
-export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl, hideImage }: ProjectCardProps) {
+export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl, hideImage, topBadge }: ProjectCardProps) {
   return (
     <Card className="group overflow-hidden border-border/50 bg-gradient-card hover:shadow-elevated transition-all duration-500 hover:-translate-y-3 relative h-full">
       {/* Subtle glow effect on hover */}
