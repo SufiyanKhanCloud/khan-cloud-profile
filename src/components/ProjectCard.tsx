@@ -11,6 +11,7 @@ interface ProjectCardProps {
   technologies: string[];
   liveUrl?: string;
   hideImage?: boolean;
+  topBadge?: string;
 }
 
 export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl, hideImage }: ProjectCardProps) {
