@@ -53,11 +53,12 @@ export default function Portfolio() {
     hideImage: true
   }, {
     title: "MAS-Simulator (Queueing Theory Engine)",
-    description: "A high-performance simulation platform for analyzing M/M/1, M/M/S, and M/G/1 queueing models. Features optimized multi-stage Docker builds, non-root container security, real-time statistical engine, and priority scheduling analysis.",
+    description: "The application was built as a team academic project. The entire DevOps lifecycle, cloud architecture, and observability stack were engineered entirely by me as a solo contribution.\n\nWhat I independently built:\n\n• Multi-stage Dockerfile with optimized container footprint and non-root container security\n• Zero-touch GitHub Actions CI/CD pipeline automating Docker Hub registry pushes on every commit\n• AWS EC2 environment and security groups provisioned programmatically using Terraform\n• Ansible playbooks for automated server configuration and container lifecycle management\n• Prometheus and Grafana APM stack with custom PromQL queries for real-time hardware and application telemetry",
     githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
     liveUrl: "https://mas-simulator-calculator.vercel.app/",
     imageUrl: "/lovable-uploads/mas-simulator.png",
-    technologies: ["Next.js", "TypeScript", "Docker", "Tailwind CSS"]
+    technologies: ["Next.js", "TypeScript", "Docker", "GitHub Actions", "Terraform", "Ansible", "AWS EC2", "Prometheus", "Grafana", "PromQL"],
+    topBadge: "DevOps Architecture — Solo"
   }];
 
   const earlierProjects = [{

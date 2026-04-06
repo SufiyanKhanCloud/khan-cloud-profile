@@ -11,9 +11,10 @@ interface ProjectCardProps {
   technologies: string[];
   liveUrl?: string;
   hideImage?: boolean;
+  topBadge?: string;
 }
 
-export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl, hideImage }: ProjectCardProps) {
+export function ProjectCard({ title, description, githubUrl, imageUrl, technologies, liveUrl, hideImage, topBadge }: ProjectCardProps) {
   return (
     <Card className="group overflow-hidden border-border/50 bg-gradient-card hover:shadow-elevated transition-all duration-500 hover:-translate-y-3 relative h-full">
       {/* Subtle glow effect on hover */}
@@ -57,11 +58,16 @@ export function ProjectCard({ title, description, githubUrl, imageUrl, technolog
       )}
       
       <CardHeader className="pb-3 relative">
+        {topBadge && (
+          <Badge variant="outline" className="w-fit text-[10px] uppercase tracking-widest text-primary border-primary/30 mb-2">
+            {topBadge}
+          </Badge>
+        )}
         <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
           {title}
           <span className="w-0 group-hover:w-4 h-0.5 bg-primary transition-all duration-300" />
         </CardTitle>
-        <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+        <CardDescription className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
           {description}
         </CardDescription>
       </CardHeader>
