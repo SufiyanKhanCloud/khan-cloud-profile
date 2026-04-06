@@ -19,7 +19,7 @@ export function ProjectCard({ title, description, githubUrl, imageUrl, technolog
       {/* Subtle glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-hero opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-lg" />
       
-      {imageUrl ? (
+      {hideImage ? null : imageUrl ? (
         <div className="aspect-video overflow-hidden relative">
           <img 
             src={imageUrl} 
