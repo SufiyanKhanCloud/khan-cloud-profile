@@ -53,7 +53,7 @@ export default function Portfolio() {
     hideImage: true
   }, {
     title: "MAS-Simulator (Queueing Theory Engine)",
-    description: "The application was built as a team academic project. The entire DevOps lifecycle, cloud architecture, and observability stack were engineered entirely by me as a solo contribution.\n\nWhat I independently built:\n\n• Multi-stage Dockerfile with optimized container footprint and non-root container security\n• Zero-touch GitHub Actions CI/CD pipeline automating Docker Hub registry pushes on every commit\n• AWS EC2 environment and security groups provisioned programmatically using Terraform\n• Ansible playbooks for automated server configuration and container lifecycle management\n• Prometheus and Grafana APM stack with custom PromQL queries for real-time hardware and application telemetry",
+    description: "Team-built Next.js queueing theory application. I independently owned the entire DevOps lifecycle: multi-stage Docker builds, zero-touch GitHub Actions CI/CD pipeline, AWS EC2 provisioning via Terraform, Ansible server configuration, and a full Prometheus and Grafana APM stack with custom PromQL queries.",
     githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
     liveUrl: "https://mas-simulator-calculator.vercel.app/",
     imageUrl: "/lovable-uploads/mas-simulator.png",
