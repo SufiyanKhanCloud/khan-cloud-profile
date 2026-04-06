@@ -58,11 +58,16 @@ export function ProjectCard({ title, description, githubUrl, imageUrl, technolog
       )}
       
       <CardHeader className="pb-3 relative">
+        {topBadge && (
+          <Badge variant="outline" className="w-fit text-[10px] uppercase tracking-widest text-primary border-primary/30 mb-2">
+            {topBadge}
+          </Badge>
+        )}
         <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
           {title}
           <span className="w-0 group-hover:w-4 h-0.5 bg-primary transition-all duration-300" />
         </CardTitle>
-        <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+        <CardDescription className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
           {description}
         </CardDescription>
       </CardHeader>
