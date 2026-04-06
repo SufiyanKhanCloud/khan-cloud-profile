@@ -48,7 +48,7 @@ export default function Portfolio() {
   }, {
     title: "Production APM Pipeline with Prometheus and Grafana",
     description: "Built a complete Application Performance Monitoring pipeline for a Next.js application. Created a custom prom-client exporter exposing live metrics, configured Docker host networking with host.docker.internal routing, wrote custom PromQL queries visualizing both server RAM and business logic metrics in a single Grafana dashboard. Exported dashboard as JSON for GitOps version control.",
-    githubUrl: "https://github.com/SufiyanKhanCloud",
+    githubUrl: "https://github.com/SufiyanKhanCloud/Docker-360/tree/main/elk-docker",
     technologies: ["Prometheus", "Grafana", "Docker", "Next.js", "Observability", "PromQL"],
     hideImage: true
   }, {
