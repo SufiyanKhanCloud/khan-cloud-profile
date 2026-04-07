@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import masArchitecture from "@/assets/mas-architecture.png";
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity, FolderArchive } from "lucide-react";
 import { SpotlightCard } from "@/components/SpotlightCard";
