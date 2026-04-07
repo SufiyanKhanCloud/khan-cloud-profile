@@ -24,6 +24,7 @@ import { MagneticButton } from "@/components/MagneticButton";
 import { FloatingTechLogos } from "@/components/FloatingTechLogos";
 import { WorkExperience } from "@/components/WorkExperience";
 import { StatsCounter } from "@/components/StatsCounter";
+import { LiveTerminal } from "@/components/LiveTerminal";
 import { Briefcase } from "lucide-react";
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
