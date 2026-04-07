@@ -330,16 +330,33 @@ export default function Portfolio() {
                     </Button>
                   </MagneticButton>
                 </motion.div>
+
+                {/* Live Terminal */}
+                <motion.div
+                  className="w-full max-w-xl mt-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <LiveTerminal />
+                </motion.div>
               </motion.div>
 
-              {/* Right side - Live Terminal */}
+              {/* Right side - Profile image */}
               <motion.div
-                className="flex-shrink-0 w-full lg:w-[480px] xl:w-[520px]"
-                initial={{ opacity: 0, scale: 0.9, x: 40 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <LiveTerminal />
+                <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated relative group">
+                  <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
+                  <LazyImage 
+                    src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
+                    alt="Sufiyan Khan - DevOps Engineer" 
+                    className="w-full h-full rounded-full object-cover relative z-10" 
+                  />
+                </div>
               </motion.div>
             </div>
               
