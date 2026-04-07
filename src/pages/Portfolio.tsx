@@ -330,6 +330,16 @@ export default function Portfolio() {
                     </Button>
                   </MagneticButton>
                 </motion.div>
+
+                {/* Live Terminal */}
+                <motion.div
+                  className="w-full max-w-xl mt-8"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <LiveTerminal />
+                </motion.div>
               </motion.div>
 
               {/* Right side - Profile image */}
