@@ -540,6 +540,30 @@ export default function Portfolio() {
                 </div>
               ))}
             </div>
+
+            {/* MAS-Simulator System Architecture */}
+            <div className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2">System Architecture</h3>
+                <p className="text-muted-foreground text-sm">MAS-Simulator — End-to-end DevOps pipeline and cloud infrastructure</p>
+              </div>
+              <div 
+                className="relative rounded-xl overflow-hidden border border-border/50 shadow-elevated cursor-pointer group"
+                onClick={() => setArchLightbox(true)}
+              >
+                <img 
+                  src={masArchitecture} 
+                  alt="MAS-Simulator system architecture diagram showing CI/CD pipeline, AWS EC2, Docker containers, Prometheus, Grafana, Terraform, and Ansible" 
+                  className="w-full h-auto object-contain bg-black/90 transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/80 backdrop-blur-sm text-foreground text-sm font-medium px-4 py-2 rounded-full shadow-medium">
+                    Click to expand
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </AnimatedSection>
