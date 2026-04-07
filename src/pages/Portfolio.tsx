@@ -794,6 +794,28 @@ export default function Portfolio() {
           </div>
         </footer>
       </div>
+
+      {/* Architecture Lightbox */}
+      {archLightbox && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setArchLightbox(false)}
+        >
+          <div className="relative max-w-[95vw] max-h-[95vh]">
+            <img 
+              src={masArchitecture} 
+              alt="MAS-Simulator system architecture diagram" 
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            />
+            <button 
+              onClick={() => setArchLightbox(false)}
+              className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-background/90 text-foreground flex items-center justify-center text-lg font-bold hover:bg-primary hover:text-primary-foreground transition-colors shadow-medium"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
