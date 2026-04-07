@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import masArchitecture from "@/assets/mas-architecture.png";
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, Mail, ExternalLink, Award, Lightbulb, Code, Cloud, Terminal, Server, Menu, X, Box, GitMerge, Activity, FolderArchive } from "lucide-react";
 import { SpotlightCard } from "@/components/SpotlightCard";
@@ -28,6 +29,7 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [archLightbox, setArchLightbox] = useState(false);
   
   const typewriterTexts = ["DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const featuredProjects = [{
@@ -539,6 +541,30 @@ export default function Portfolio() {
                 </div>
               ))}
             </div>
+
+            {/* MAS-Simulator System Architecture */}
+            <div className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-foreground mb-2">System Architecture</h3>
+                <p className="text-muted-foreground text-sm">MAS-Simulator — End-to-end DevOps pipeline and cloud infrastructure</p>
+              </div>
+              <div 
+                className="relative rounded-xl overflow-hidden border border-border/50 shadow-elevated cursor-pointer group"
+                onClick={() => setArchLightbox(true)}
+              >
+                <img 
+                  src={masArchitecture} 
+                  alt="MAS-Simulator system architecture diagram showing CI/CD pipeline, AWS EC2, Docker containers, Prometheus, Grafana, Terraform, and Ansible" 
+                  className="w-full h-auto object-contain bg-black/90 transition-transform duration-500 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/80 backdrop-blur-sm text-foreground text-sm font-medium px-4 py-2 rounded-full shadow-medium">
+                    Click to expand
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </AnimatedSection>
@@ -768,6 +794,28 @@ export default function Portfolio() {
           </div>
         </footer>
       </div>
+
+      {/* Architecture Lightbox */}
+      {archLightbox && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setArchLightbox(false)}
+        >
+          <div className="relative max-w-[95vw] max-h-[95vh]">
+            <img 
+              src={masArchitecture} 
+              alt="MAS-Simulator system architecture diagram" 
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            />
+            <button 
+              onClick={() => setArchLightbox(false)}
+              className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-background/90 text-foreground flex items-center justify-center text-lg font-bold hover:bg-primary hover:text-primary-foreground transition-colors shadow-medium"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
