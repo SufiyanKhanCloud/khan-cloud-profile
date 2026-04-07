@@ -29,6 +29,7 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [archLightbox, setArchLightbox] = useState(false);
   
   const typewriterTexts = ["DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
   const featuredProjects = [{
