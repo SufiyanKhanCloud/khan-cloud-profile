@@ -402,7 +402,7 @@ export default function Portfolio() {
                     <div className="text-sm text-accent-foreground/80">Resource Saves</div>
                   </div>
                   <div className="group hover:scale-105 transition-transform">
-                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">159</div>
+                    <div className="text-2xl font-bold group-hover:text-primary transition-colors">270</div>
                     <div className="text-sm text-accent-foreground/80">Reactions</div>
                   </div>
                 </div>
