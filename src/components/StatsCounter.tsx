@@ -12,7 +12,7 @@ interface StatItem {
 const stats: StatItem[] = [
   { icon: FolderGit2, value: 5, suffix: "+", label: "Projects Built" },
   { icon: Award, value: 6, suffix: "", label: "Certifications" },
-  { icon: Users, value: 26000, suffix: "+", label: "Content Impressions" },
+  { icon: Users, value: 51000, suffix: "+", label: "Content Impressions" },
   { icon: TrendingUp, value: 5, suffix: "+", label: "Hours/Week Saved via Automation" },
 ];
 
