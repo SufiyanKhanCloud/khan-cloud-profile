@@ -90,7 +90,7 @@ export default function Portfolio() {
     technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"]
   }];
   const certifications = [
-    { name: "AWS Cloud Practitioner — In Progress", url: "" },
+    { name: "AWS Cloud Practitioner", url: "" },
     { name: "Introduction to DevOps", url: "https://www.coursera.org/account/accomplishments/verify/OIGBYO6L8GZJ" },
     { name: "Introduction to Cloud Computing", url: "https://www.coursera.org/account/accomplishments/verify/O4EN4P7ZI6XV" },
     { name: "Introduction to Agile Development and Scrum", url: "https://www.coursera.org/account/accomplishments/verify/PV26WR8KH5MX" },
@@ -692,7 +692,7 @@ export default function Portfolio() {
                           ) : (
                             <Button variant="outline" size="sm" className="w-full opacity-70 cursor-default" disabled>
                               <Award className="h-4 w-4" />
-                              In Progress
+                              Completed
                             </Button>
                           )}
                         </CardContent>
