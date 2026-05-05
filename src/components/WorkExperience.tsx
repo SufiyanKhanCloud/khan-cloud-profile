@@ -13,7 +13,7 @@ interface ExperienceEntry {
 
 const experiences: ExperienceEntry[] = [
   {
-    role: "DevOps Intern",
+    role: "DevOps Engineer Intern",
     company: "Teknoloje Solutions",
     logoUrl: "/lovable-uploads/teknoloje-logo.png",
     duration: "February 2026 — Present",
