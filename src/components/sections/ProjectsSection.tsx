@@ -45,6 +45,13 @@ const featuredProjects = [
 
 const earlierProjects = [
   {
+    title: "Jenkins CI/CD Pipeline (Shared Libraries + RBAC)",
+    description: "Groovy pipeline on AWS using Jenkins Shared Libraries and RBAC. Cut deployment time from 2 hours to 12 minutes and reduced pipeline code duplication by 60%.",
+    githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
+    imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
+    technologies: ["Jenkins", "Groovy", "Shared Libraries", "RBAC", "Docker", "AWS EC2"],
+  },
+  {
     title: "CI/CD Pipeline for Django Notes App",
     description: "Jenkins-based CI/CD pipeline with 4 Groovy scripts. Automates build, test, deploy on AWS.",
     githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",

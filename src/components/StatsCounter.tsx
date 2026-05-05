@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { FolderGit2, Award, Users, TrendingUp } from "lucide-react";
+import { ShieldCheck, Users, Timer, Zap } from "lucide-react";
 
 interface StatItem {
   icon: React.ElementType;
@@ -10,10 +10,10 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { icon: FolderGit2, value: 5, suffix: "+", label: "Projects Built" },
-  { icon: Award, value: 6, suffix: "", label: "Certifications" },
-  { icon: Users, value: 51000, suffix: "+", label: "Content Impressions" },
-  { icon: TrendingUp, value: 5, suffix: "+", label: "Hours/Week Saved via Automation" },
+  { icon: ShieldCheck, value: 2659, suffix: "+", label: "Brute-Force Attempts Blocked" },
+  { icon: Users, value: 15, suffix: "+", label: "Developers Onboarded to VPN/Gitea" },
+  { icon: Timer, value: 88, suffix: "%", label: "Deploy Time Reduction (2h → 12m)" },
+  { icon: Zap, value: 5, suffix: "+", label: "Hours/Week Saved via Automation" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
@@ -39,7 +39,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
     return () => clearInterval(timer);
   }, [isInView, value]);
 
-  const formatted = value >= 1000 ? `${(count / 1000).toFixed(count >= value ? 0 : 1)}K` : count;
+  const formatted = count.toLocaleString();
 
   return (
     <span ref={ref} className="tabular-nums">

@@ -8,7 +8,7 @@ import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
 import { LiveTerminal } from "@/components/LiveTerminal";
 
-const typewriterTexts = ["DevOps Engineer", "Cloud & Infrastructure Automation Enthusiast"];
+const typewriterTexts = ["DevOps Engineer Intern", "Cloud & Infrastructure Automation"];
 
 export function HeroSection() {
   return (
