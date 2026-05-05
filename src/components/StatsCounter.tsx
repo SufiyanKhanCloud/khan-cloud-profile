@@ -39,7 +39,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
     return () => clearInterval(timer);
   }, [isInView, value]);
 
-  const formatted = value >= 1000 ? `${(count / 1000).toFixed(count >= value ? 0 : 1)}K` : count;
+  const formatted = count.toLocaleString();
 
   return (
     <span ref={ref} className="tabular-nums">
