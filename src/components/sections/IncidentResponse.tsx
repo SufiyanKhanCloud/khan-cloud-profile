@@ -63,7 +63,7 @@ export function IncidentResponse() {
               Production Incidents Handled
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Real outages and live attacks I've responded to — detection, response, and outcome.
+              Real outages and live attacks I've responded to: detection, response, and outcome.
             </p>
           </div>
 
