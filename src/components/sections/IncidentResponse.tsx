@@ -26,7 +26,7 @@ const incidents: Incident[] = [
   {
     icon: Network,
     severity: "High",
-    title: "Production Outage — CORS & Mixed-Content on Decoupled Stack",
+    title: "Production Outage: CORS & Mixed-Content on Decoupled Stack",
     detection: "React frontend + .NET backend on IIS went down after an HTTPS rollout. Browser console flooded with mixed-content and CORS preflight failures.",
     response: "Diagnosed the breakage across both services in a single working session. Bound SSL certificates to React and .NET on IIS, corrected CORS allow-origin rules, and updated environment routing to enforce end-to-end HTTPS.",
     outcome: "Full HTTPS functionality restored within hours. No further mixed-content regressions reported.",
