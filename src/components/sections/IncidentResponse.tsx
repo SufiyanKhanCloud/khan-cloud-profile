@@ -37,7 +37,7 @@ const incidents: Incident[] = [
     severity: "High",
     title: "Ransomware Exposure via SMB-Mapped Backup Drives",
     detection: "Backup strategy used persistent SMB shares, meaning ransomware on the production server could encrypt both live data and backups in one sweep.",
-    response: "Replaced SMB with an isolated PowerShell vaulting engine. Each run opens a temporary encrypted FTP pipeline, transmits compressed archives, and severs the connection — leaving zero persistent network access to backup storage.",
+    response: "Replaced SMB with an isolated PowerShell vaulting engine. Each run opens a temporary encrypted FTP pipeline, transmits compressed archives, and severs the connection, leaving zero persistent network access to backup storage.",
     outcome: "Backups are now ransomware-resistant and 5+ hours of weekly manual work eliminated.",
     tags: ["PowerShell", "Backup & Recovery", "Cybersecurity", "Automation"],
   },
