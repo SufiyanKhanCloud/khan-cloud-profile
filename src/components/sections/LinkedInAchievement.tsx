@@ -15,7 +15,7 @@ export function LinkedInAchievement() {
                 <CardTitle className="text-xl">Viral LinkedIn Post Achievement</CardTitle>
               </div>
               <CardDescription className="text-muted-foreground">
-                298-Page "Master AWS DevOps Cheat Sheet" — Linux, Shell Scripting, CI/CD & IaC
+                298-Page "Master AWS DevOps Cheat Sheet" covering Linux, Shell Scripting, CI/CD & IaC
               </CardDescription>
             </CardHeader>
             <CardContent>
