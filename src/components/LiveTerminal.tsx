@@ -102,7 +102,7 @@ export function LiveTerminal() {
           <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
           <span className="w-3 h-3 rounded-full bg-[#28c840]" />
         </div>
-        <span className="text-[#8b949e] text-xs ml-2">sufiyan@ubuntu — bash</span>
+        <span className="text-[#8b949e] text-xs ml-2">sufiyan@ubuntu: bash</span>
       </div>
 
       {/* Terminal body */}

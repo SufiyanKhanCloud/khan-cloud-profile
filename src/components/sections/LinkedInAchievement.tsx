@@ -15,7 +15,7 @@ export function LinkedInAchievement() {
                 <CardTitle className="text-xl">Viral LinkedIn Post Achievement</CardTitle>
               </div>
               <CardDescription className="text-muted-foreground">
-                298-Page "Master AWS DevOps Cheat Sheet" — Linux, Shell Scripting, CI/CD & IaC
+                298-Page "Master AWS DevOps Cheat Sheet" covering Linux, Shell Scripting, CI/CD & IaC
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -40,7 +40,7 @@ export function LinkedInAchievement() {
               <div className="mt-6 p-4 bg-muted/40 border border-border/40 rounded-lg hover:bg-muted/60 transition-colors">
                 <p className="text-sm text-muted-foreground">
                   Published a 298-page "Master AWS DevOps Cheat Sheet" covering Linux, Shell scripting, 
-                  CI/CD pipelines, and Infrastructure as Code — sparking massive community engagement 
+                  CI/CD pipelines, and Infrastructure as Code, sparking massive community engagement 
                   and helping thousands of engineers accelerate their DevOps journey.
                 </p>
               </div>

@@ -26,7 +26,7 @@ const incidents: Incident[] = [
   {
     icon: Network,
     severity: "High",
-    title: "Production Outage — CORS & Mixed-Content on Decoupled Stack",
+    title: "Production Outage: CORS & Mixed-Content on Decoupled Stack",
     detection: "React frontend + .NET backend on IIS went down after an HTTPS rollout. Browser console flooded with mixed-content and CORS preflight failures.",
     response: "Diagnosed the breakage across both services in a single working session. Bound SSL certificates to React and .NET on IIS, corrected CORS allow-origin rules, and updated environment routing to enforce end-to-end HTTPS.",
     outcome: "Full HTTPS functionality restored within hours. No further mixed-content regressions reported.",
@@ -37,7 +37,7 @@ const incidents: Incident[] = [
     severity: "High",
     title: "Ransomware Exposure via SMB-Mapped Backup Drives",
     detection: "Backup strategy used persistent SMB shares, meaning ransomware on the production server could encrypt both live data and backups in one sweep.",
-    response: "Replaced SMB with an isolated PowerShell vaulting engine. Each run opens a temporary encrypted FTP pipeline, transmits compressed archives, and severs the connection — leaving zero persistent network access to backup storage.",
+    response: "Replaced SMB with an isolated PowerShell vaulting engine. Each run opens a temporary encrypted FTP pipeline, transmits compressed archives, and severs the connection, leaving zero persistent network access to backup storage.",
     outcome: "Backups are now ransomware-resistant and 5+ hours of weekly manual work eliminated.",
     tags: ["PowerShell", "Backup & Recovery", "Cybersecurity", "Automation"],
   },
@@ -63,7 +63,7 @@ export function IncidentResponse() {
               Production Incidents Handled
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Real outages and live attacks I've responded to — detection, response, and outcome.
+              Real outages and live attacks I've responded to: detection, response, and outcome.
             </p>
           </div>
 
