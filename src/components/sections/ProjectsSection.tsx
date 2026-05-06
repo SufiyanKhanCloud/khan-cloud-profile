@@ -39,7 +39,7 @@ const featuredProjects = [
     liveUrl: "https://mas-simulator-calculator.vercel.app/",
     imageUrl: "/lovable-uploads/mas-simulator.png",
     technologies: ["Next.js", "TypeScript", "Docker", "GitHub Actions", "Terraform", "Ansible", "AWS EC2", "Prometheus", "Grafana", "PromQL"],
-    topBadge: "DevOps Architecture — Solo",
+    topBadge: "DevOps Architecture: Solo",
   },
 ];
 
