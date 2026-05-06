@@ -112,7 +112,7 @@ export function ProjectsSection() {
             <div className="mt-16">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-foreground mb-2">System Architecture</h3>
-                <p className="text-muted-foreground text-sm">MAS-Simulator — End-to-end DevOps pipeline and cloud infrastructure</p>
+                <p className="text-muted-foreground text-sm">MAS-Simulator: end-to-end DevOps pipeline and cloud infrastructure</p>
               </div>
               <div 
                 className="relative rounded-xl overflow-hidden border border-border/50 shadow-elevated cursor-pointer group"
