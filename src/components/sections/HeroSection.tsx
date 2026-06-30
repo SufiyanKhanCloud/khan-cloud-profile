@@ -99,9 +99,11 @@ export function HeroSection() {
               <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated relative group">
                 <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
                 <LazyImage 
-                  src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
-                  alt="Sufiyan Khan - DevOps Engineer" 
-                  className="w-full h-full rounded-full object-cover relative z-10" 
+                  src="/lovable-uploads/profile.webp"
+                  alt="Sufiyan Khan - DevOps Engineer"
+                  width={400}
+                  height={400}
+                  className="w-full h-full rounded-full object-cover relative z-10"
                 />
               </div>
             </motion.div>

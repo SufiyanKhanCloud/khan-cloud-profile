@@ -5,9 +5,11 @@ interface LazyImageProps {
   alt: string;
   className?: string;
   placeholder?: string;
+  width?: number;
+  height?: number;
 }
 
-export function LazyImage({ src, alt, className = "", placeholder = "" }: LazyImageProps) {
+export function LazyImage({ src, alt, className = "", placeholder = "", width, height }: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -39,6 +41,8 @@ export function LazyImage({ src, alt, className = "", placeholder = "" }: LazyIm
         <img
           src={src}
           alt={alt}
+          width={width}
+          height={height}
           className={`${className} transition-opacity duration-300 ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}

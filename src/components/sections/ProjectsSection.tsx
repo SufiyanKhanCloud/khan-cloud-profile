@@ -37,7 +37,7 @@ const featuredProjects = [
     description: "Team-built Next.js queueing theory application. I independently owned the entire DevOps lifecycle: multi-stage Docker builds, zero-touch GitHub Actions CI/CD pipeline, AWS EC2 provisioning via Terraform, Ansible server configuration, and a full Prometheus and Grafana APM stack with custom PromQL queries.",
     githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
     liveUrl: "https://mas-simulator-calculator.vercel.app/",
-    imageUrl: "/lovable-uploads/mas-simulator.png",
+    imageUrl: "/lovable-uploads/mas-simulator.webp",
     technologies: ["Next.js", "TypeScript", "Docker", "GitHub Actions", "Terraform", "Ansible", "AWS EC2", "Prometheus", "Grafana", "PromQL"],
     topBadge: "DevOps Architecture: Solo",
   },

@@ -58,10 +58,12 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 rounded-full bg-gradient-hero p-0.5 animate-glow-pulse">
-              <LazyImage 
-                src="/lovable-uploads/bc5783a9-f1d1-4fc6-bcca-9afee68408a8.png" 
-                alt="Sufiyan Khan" 
-                className="w-full h-full rounded-full object-cover" 
+              <LazyImage
+                src="/lovable-uploads/profile.webp"
+                alt="Sufiyan Khan"
+                width={32}
+                height={32}
+                className="w-full h-full rounded-full object-cover"
               />
             </div>
             <div className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
