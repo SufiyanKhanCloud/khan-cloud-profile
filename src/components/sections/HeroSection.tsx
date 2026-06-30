@@ -8,7 +8,7 @@ import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
 import { LiveTerminal } from "@/components/LiveTerminal";
 
-const typewriterTexts = ["DevOps Engineer Intern", "Cloud & Infrastructure Automation"];
+const typewriterTexts = ["Junior DevOps Engineer", "CI/CD & Infrastructure Automation"];
 
 export function HeroSection() {
   return (
@@ -46,7 +46,7 @@ export function HeroSection() {
               </div>
               
               <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-                Final-year CS student at UBIT building and fixing production infrastructure at Teknoloje Solutions. I deploy real systems, solve real problems, and document everything.
+                I've built and maintained 16+ production CI/CD pipelines, led real-time incident response to a live brute-force attack, and cut a Jenkins pipeline's deploy time from 2 hours to 12 minutes — all on live infrastructure at Teknoloje Solutions.
               </p>
               
               <motion.div 
