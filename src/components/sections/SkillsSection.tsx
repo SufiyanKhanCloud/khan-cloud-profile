@@ -5,8 +5,8 @@ import { TiltCard } from "@/components/TiltCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 const skillCategories = [
-  { icon: Cloud, title: "Infrastructure & Cloud", skills: ["AWS (EC2, S3, VPC, IAM)", "Windows Server", "Linux (Ubuntu/Debian)"] },
-  { icon: Terminal, title: "DevOps & Automation", skills: ["Docker", "GitHub Actions", "Jenkins", "Gitea", "Git", "PowerShell", "Bash"] },
+  { icon: Cloud, title: "Infrastructure & Cloud", skills: ["AWS (EC2, S3, VPC, IAM)", "Kubernetes", "Windows Server", "Linux (Ubuntu/Debian)"] },
+  { icon: Terminal, title: "DevOps & Automation", skills: ["Docker", "Jenkins", "GitHub Actions", "Gitea", "Git", "PowerShell", "Bash"] },
   { icon: Server, title: "Networking & Security", skills: ["WireGuard", "IIS", "SSL/TLS", "DNS", "Firewall Rules"] },
   { icon: Code, title: "IaC & Config", skills: ["Terraform", "Ansible", "YAML"] },
   { icon: Activity, title: "Observability", skills: ["Prometheus", "Grafana", "PromQL"] },

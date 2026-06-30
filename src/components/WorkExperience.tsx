@@ -25,7 +25,7 @@ const experiences: ExperienceEntry[] = [
       "Resolved a broken production deployment by diagnosing and fixing mixed content and CORS failures across a decoupled React and .NET application on IIS, binding SSL certificates to both services and updating environment routing to enforce end-to-end HTTPS.",
       "Saved 5+ hours of manual work per week by automating critical system backups and routine maintenance using PowerShell scripts and Windows Task Scheduler.",
     ],
-    technologies: ["AWS", "Docker", "Linux", "Windows Server", "IIS", "GitHub Actions", "Shell Scripting", "MS SQL Server"],
+    technologies: ["AWS", "Docker", "Linux", "Windows Server", "IIS", "Jenkins", "Terraform", "Ansible", "Kubernetes", "PowerShell", "GitHub Actions", "MS SQL Server", "WireGuard"],
   },
 ];
 
