@@ -14,9 +14,9 @@ const featuredProjects = [
     hideImage: true,
   },
   {
-    title: "Enterprise Gitea Version Control Platform",
-    description: "The company had no proper version control system. I deployed a self-hosted Gitea instance on Windows Server for 15+ developers, migrated the database from SQLite to MS SQL Server, implemented Role-Based Access Control and multi-tenancy, and configured custom repository limits benchmarked against GitHub and GitLab standards.",
-    technologies: ["Gitea", "Windows Server", "MS SQL Server", "RBAC", "Git", "DevOps"],
+    title: "Enterprise Gitea Version Control Platform & CI/CD Backbone",
+    description: "The company had no version control system. I deployed a self-hosted Gitea instance on Windows Server for 15+ developers, migrated from SQLite to MS SQL Server, implemented RBAC and multi-tenancy, and built a custom GitHub-to-Gitea sync bridge that became the backbone for 16+ production CI/CD pipelines running Angular and .NET deployments on IIS.",
+    technologies: ["Gitea", "Windows Server", "MS SQL Server", "RBAC", "GitHub Actions", "CI/CD", "DevOps"],
     hideImage: true,
   },
   {

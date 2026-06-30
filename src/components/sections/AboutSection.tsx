@@ -23,7 +23,7 @@ export function AboutSection() {
           <Card className="bg-gradient-card border-border/50 shadow-medium hover:shadow-elevated transition-all duration-500 hover:-translate-y-2">
             <CardContent className="p-8">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                While most CS students are doing tutorials, I've been architecting production infrastructure. At Teknoloje Solutions I deployed a Zero-Trust WireGuard VPN on Windows Server, set up an enterprise Git platform for 15+ developers, built ransomware-resistant automated backup systems, and reduced manual administrative overhead by 5+ hours per week. I work across Linux, Windows Server, Docker, Terraform, GitHub Actions, and AWS. I don't just learn tools. I use them on systems that cannot go down.
+                While most CS students are doing tutorials, I've been maintaining production infrastructure. At Teknoloje Solutions I built and maintained 16+ production CI/CD pipelines via a custom GitHub-to-Gitea sync bridge, deployed a Zero-Trust WireGuard VPN after stopping a live brute-force attack, stood up an enterprise Git platform for 15+ developers, and built ransomware-resistant backup systems — all while reducing manual overhead by 5+ hours per week. I work across Linux, Windows Server, Docker, Terraform, Jenkins, and AWS on systems that cannot go down.
               </p>
             </CardContent>
           </Card>

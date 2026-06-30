@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { ShieldCheck, Users, Timer, Zap } from "lucide-react";
+import { ShieldCheck, Users, Timer, Zap, GitBranch } from "lucide-react";
 
 interface StatItem {
   icon: React.ElementType;
@@ -10,9 +10,10 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
+  { icon: GitBranch, value: 16, suffix: "+", label: "Production CI/CD Pipelines" },
   { icon: ShieldCheck, value: 2659, suffix: "+", label: "Brute-Force Attempts Blocked" },
-  { icon: Users, value: 15, suffix: "+", label: "Developers Onboarded to VPN/Gitea" },
   { icon: Timer, value: 88, suffix: "%", label: "Deploy Time Reduction (2h → 12m)" },
+  { icon: Users, value: 15, suffix: "+", label: "Developers on VPN/Gitea" },
   { icon: Zap, value: 5, suffix: "+", label: "Hours/Week Saved via Automation" },
 ];
 
@@ -52,7 +53,7 @@ export function StatsCounter() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
