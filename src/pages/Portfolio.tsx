@@ -40,7 +40,6 @@ export default function Portfolio() {
         <main>
           <HeroSection />
           <StatsCounter />
-          <LinkedInAchievement />
           <AboutSection />
           <EngineeringFocus />
 
@@ -54,6 +53,7 @@ export default function Portfolio() {
 
           <ProjectsSection />
           <SkillsSection />
+          <LinkedInAchievement />
           <CertificationsSection />
           <ContactSection />
         </main>

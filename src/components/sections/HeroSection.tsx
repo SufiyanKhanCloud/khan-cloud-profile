@@ -49,8 +49,8 @@ export function HeroSection() {
                 I've built and maintained 16+ production CI/CD pipelines, led real-time incident response to a live brute-force attack, and cut a Jenkins pipeline's deploy time from 2 hours to 12 minutes — all on live infrastructure at Teknoloje Solutions.
               </p>
               
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              <motion.div
+                className="flex flex-wrap items-center gap-4 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -63,24 +63,19 @@ export function HeroSection() {
                     </a>
                   </Button>
                 </MagneticButton>
-                
-                <MagneticButton strength={0.2}>
-                  <Button variant="glass" size="xl" asChild className="group">
-                    <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                      View GitHub
+
+                <div className="flex items-center gap-2">
+                  <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                    <a href="https://github.com/SufiyanKhanCloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <Github className="h-5 w-5" />
                     </a>
                   </Button>
-                </MagneticButton>
-                
-                <MagneticButton strength={0.2}>
-                  <Button variant="glass" size="xl" asChild className="group">
-                    <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                      LinkedIn
+                  <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
+                    <a href="https://www.linkedin.com/in/sufiyan-khan-cloud" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <Linkedin className="h-5 w-5" />
                     </a>
                   </Button>
-                </MagneticButton>
+                </div>
               </motion.div>
 
               {/* Live Terminal */}
