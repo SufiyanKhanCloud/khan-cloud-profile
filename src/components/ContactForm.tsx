@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
 // Swap this for your FormSubmit alias after the first activation email arrives.
-const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/sufiikhan980@gmail.com";
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/29bb3fc85534537cd92fd29ea249d84b";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
