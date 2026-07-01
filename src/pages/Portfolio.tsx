@@ -18,6 +18,7 @@ import { EngineeringFocus } from "@/components/sections/EngineeringFocus";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { CertificationsSection } from "@/components/sections/CertificationsSection";
+import { RecommendationsSection } from "@/components/sections/RecommendationsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
@@ -55,6 +56,7 @@ export default function Portfolio() {
           <SkillsSection />
           <LinkedInAchievement />
           <CertificationsSection />
+          <RecommendationsSection />
           <ContactSection />
         </main>
 
