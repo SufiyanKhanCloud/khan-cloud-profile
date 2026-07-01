@@ -1,5 +1,4 @@
 import { CursorGlow } from "@/components/CursorGlow";
-import { PageLoader } from "@/components/PageLoader";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { FloatingTechLogos } from "@/components/FloatingTechLogos";
 import { ParallaxBackground } from "@/components/ParallaxBackground";
@@ -28,7 +27,6 @@ export default function Portfolio() {
   return (
     <>
       <CursorGlow />
-      <PageLoader />
       <ScrollProgress />
       <FloatingTechLogos />
       <div className="min-h-screen bg-background font-body relative grain-overlay">
