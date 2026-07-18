@@ -7,6 +7,7 @@ import { LazyImage } from "@/components/LazyImage";
 import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
 import { LiveTerminal } from "@/components/LiveTerminal";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
 
 const typewriterTexts = ["Junior DevOps Engineer", "CI/CD & Infrastructure Automation"];
 
@@ -46,7 +47,7 @@ export function HeroSection() {
               </div>
               
               <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-                I've built and maintained 16+ production CI/CD pipelines, led real-time incident response to a live brute-force attack, and cut a Jenkins pipeline's deploy time from 2 hours to 12 minutes — all on live infrastructure at Teknoloje Solutions.
+                I've built and maintained 16+ production CI/CD pipelines, led real-time incident response to a live brute-force attack, and cut a Jenkins pipeline's deploy time from 2 hours to 12 minutes, all on live infrastructure at Teknoloje Solutions.
               </p>
               
               <motion.div
