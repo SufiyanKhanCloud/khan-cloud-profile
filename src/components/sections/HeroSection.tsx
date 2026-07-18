@@ -58,7 +58,7 @@ export function HeroSection() {
               >
                 <MagneticButton strength={0.2}>
                   <Button variant="hero" size="xl" className="group shadow-strong hover:shadow-glow transition-shadow duration-300" asChild>
-                    <a href="/resume.pdf" download="Sufiyan-Khan-DevOps-Resume.pdf">
+                    <a href={resumeAsset.url} download="Sufiyan-Khan-DevOps-Resume.pdf">
                       <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
                       Download CV
                     </a>
