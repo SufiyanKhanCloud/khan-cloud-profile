@@ -18,30 +18,15 @@ interface AnimatedSectionProps {
   parallaxSpeed?: number;
 }
 
-// Custom easing — a refined "expo-out" curve shared across all entrances.
+// Refined "expo-out" easing shared across all entrances for a consistent feel.
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const variantMap: Record<NonNullable<AnimatedSectionProps["animation"]>, Variants> = {
-  "slide-up": {
-    hidden: { opacity: 0, y: 48 },
-    visible: { opacity: 1, y: 0 },
-  },
-  "slide-in-left": {
-    hidden: { opacity: 0, x: -48 },
-    visible: { opacity: 1, x: 0 },
-  },
-  "slide-in-right": {
-    hidden: { opacity: 0, x: 48 },
-    visible: { opacity: 1, x: 0 },
-  },
-  "zoom-in": {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1 },
-  },
-  "fade-in": {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  },
+  "slide-up": { hidden: { opacity: 0, y: 48 }, visible: { opacity: 1, y: 0 } },
+  "slide-in-left": { hidden: { opacity: 0, x: -48 }, visible: { opacity: 1, x: 0 } },
+  "slide-in-right": { hidden: { opacity: 0, x: 48 }, visible: { opacity: 1, x: 0 } },
+  "zoom-in": { hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1 } },
+  "fade-in": { hidden: { opacity: 0 }, visible: { opacity: 1 } },
 };
 
 export function AnimatedSection({
@@ -56,7 +41,6 @@ export function AnimatedSection({
   const ref = useRef<HTMLDivElement>(null);
   const prefersReduced = useReducedMotion();
 
-  // Scroll-linked parallax: translate Y across the element's viewport pass.
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -66,7 +50,7 @@ export function AnimatedSection({
     (v) => (v - 0.5) * 240 * parallaxSpeed
   );
 
-  // Respect users who prefer reduced motion: render a plain, static container.
+  // Accessibility: users who prefer reduced motion get a static container.
   if (prefersReduced) {
     return (
       <div ref={ref} id={id} className={className}>
@@ -75,29 +59,44 @@ export function AnimatedSection({
     );
   }
 
-  const variants = variantMap[animation];
   const transition = { duration: 0.7, ease: EASE, delay };
+  const variants = variantMap[animation];
 
-  const reveal = (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "0px 0px -12% 0px" }}
-      transition={transition}
-      className={cn(parallax ? "" : className)}
-    >
-      {children}
-    </motion.div>
-  );
-
+  // Common case (no parallax): a single styled motion element, so layout is
+  // identical to the previous single-div implementation.
   if (!parallax) {
-    return <div ref={ref} id={id}>{reveal}</div>;
+    return (
+      <motion.div
+        ref={ref}
+        id={id}
+        className={className}
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+        transition={transition}
+      >
+        {children}
+      </motion.div>
+    );
   }
 
+  // Parallax case: outer holds ref/id/className, middle drives scroll-linked Y,
+  // inner drives the entrance reveal. Keeping the transforms on separate
+  // elements avoids framer-motion transform conflicts.
   return (
     <div ref={ref} id={id} className={className}>
-      <motion.div style={{ y: parallaxY }}>{reveal}</motion.div>
+      <motion.div style={{ y: parallaxY }}>
+        <motion.div
+          variants={variants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+          transition={transition}
+        >
+          {children}
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
