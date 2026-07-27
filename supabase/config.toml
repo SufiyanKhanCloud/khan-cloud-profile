@@ -1,0 +1,4 @@
+project_id = "ykralmkcwzowvakonsms"
+
+[functions.submit-contact]
+verify_jwt = false
