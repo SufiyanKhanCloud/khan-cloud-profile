@@ -1,73 +1,36 @@
-# Welcome to your Lovable project
+# Sufiyan Khan: DevOps Engineer Portfolio
 
-## Project info
+Personal portfolio site showcasing production DevOps work: CI/CD pipeline
+architecture, Windows Server infrastructure, cloud automation, and incident
+response — built during a 5-month DevOps internship at Teknoloje Solutions.
 
-**URL**: https://lovable.dev/projects/2099dd64-6362-4bd4-818e-0f8825b921a8
+**Live site:** https://sufiyan-khan-portfolio.lovable.app/
 
-## How can I edit this code?
+## What's on it
 
-There are several ways of editing your application.
+- Production experience: 16+ CI/CD pipelines, Zero-Trust WireGuard VPN,
+  live brute-force incident response, Prometheus/Grafana observability
+- Projects: CI/CD pipelines with Jenkins & Docker on AWS, a cloud-native
+  stochastic queueing engine with Terraform/Ansible, and more
+- Downloadable resume and links to verified certifications
 
-**Use Lovable**
+## Tech stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2099dd64-6362-4bd4-818e-0f8825b921a8) and start prompting.
+- React + TypeScript, built with Vite
+- Tailwind CSS + shadcn/ui component library
+- Supabase (backend/data)
+- Deployed via Lovable
 
-Changes made via Lovable will be committed automatically to this repo.
+## Running locally
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/SufiyanKhanCloud/khan-cloud-profile.git
+cd khan-cloud-profile
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Contact
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2099dd64-6362-4bd4-818e-0f8825b921a8) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- LinkedIn: [linkedin.com/in/sufiyan-khan-cloud](https://linkedin.com/in/sufiyan-khan-cloud)
+- GitHub: [github.com/SufiyanKhanCloud](https://github.com/SufiyanKhanCloud)
