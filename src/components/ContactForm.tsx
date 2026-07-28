@@ -6,7 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+
+// Swap this for your FormSubmit alias after the first activation email arrives.
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/29bb3fc85534537cd92fd29ea249d84b";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -61,18 +63,24 @@ export function ContactForm() {
     setIsLoading(true);
 
     try {
-      const { error: invokeError } = await supabase.functions.invoke("submit-contact", {
-        body: {
-          name: name.trim(),
-          email: email.trim(),
-          subject: subject.trim(),
-          message: message.trim(),
-          // Honeypot field — server silently drops bots that fill this
-          company: honey,
-        },
+      const data = new FormData();
+      data.append("name", name.trim());
+      data.append("email", email.trim());
+      data.append("subject", subject.trim());
+      data.append("message", message.trim());
+      // FormSubmit control fields
+      data.append("_subject", "New message from portfolio contact form");
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+      data.append("_honey", honey);
+
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
       });
 
-      if (invokeError) throw invokeError;
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
 
       // Reset fields only on confirmed success
       setName("");

@@ -1,29 +1,10 @@
 import { useState } from "react";
 import masArchitecture from "@/assets/mas-architecture.png";
-import { Code, FolderArchive, Network } from "lucide-react";
+import { Code, FolderArchive } from "lucide-react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { TiltCard } from "@/components/TiltCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { MermaidDiagram } from "@/components/MermaidDiagram";
-
-const wireGuardChart = `flowchart LR
-    Dev["Developer<br/>Asymmetric Key Pair"] -->|Encrypted WireGuard Tunnel| GW["VPN Gateway"]
-    GW -->|Authenticated Zero-Trust Access| SRV["Windows Server<br/>Production Workloads"]
-    SRV --- FW["Strict Firewall<br/>Drops All Public Traffic"]
-    ATK["External Attacker<br/>Brute-Force Attempt"] -.->|Blocked| FW`;
-
-const masPipelineChart = `flowchart LR
-    Push["Developer Push"] -->|Git| Repo["GitHub Repository"]
-    Repo -->|Trigger| CI["GitHub Actions<br/>CI/CD Pipeline"]
-    CI -->|Multi-stage Build| Img["Docker Image"]
-    CI -->|Provision| TF["Terraform IaC"]
-    TF --> EC2["AWS EC2 Instance"]
-    CI -->|Configure| Ans["Ansible"]
-    Ans --> EC2
-    EC2 -->|Run| App["Next.js Production App"]
-    EC2 -->|Metrics| Prom["Prometheus"]
-    Prom --> Graf["Grafana Dashboard"]`;
 
 const featuredProjects = [
   {
@@ -127,46 +108,19 @@ export function ProjectsSection() {
               ))}
             </div>
 
-            {/* Architecture Diagrams */}
+            {/* MAS-Simulator System Architecture */}
             <div className="mt-16">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 mb-4">
-                  <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                  <Network className="h-6 w-6 text-primary" />
-                  <div className="w-12 h-0.5 bg-gradient-hero"></div>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">Architecture Diagrams</h3>
-                <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-                  Visual proof of two real production systems I designed and shipped
-                </p>
+                <h3 className="text-2xl font-bold text-foreground mb-2">System Architecture</h3>
+                <p className="text-muted-foreground text-sm">MAS-Simulator: end-to-end DevOps pipeline and cloud infrastructure</p>
               </div>
-              <div className="grid lg:grid-cols-2 gap-6 items-start">
-                <MermaidDiagram
-                  chart={wireGuardChart}
-                  title="Zero-Trust WireGuard VPN Infrastructure"
-                  caption="Replaced exposed NAT port-forwarding with a Zero-Trust VPN. Every developer authenticates with an asymmetric key pair, and a strict firewall drops all public traffic to the production server."
-                />
-                <MermaidDiagram
-                  chart={masPipelineChart}
-                  title="MAS-Simulator DevOps Pipeline"
-                  caption="End-to-end DevOps lifecycle I owned: multi-stage Docker builds, zero-touch GitHub Actions CI/CD, Terraform provisioning, Ansible configuration, and a full Prometheus and Grafana APM stack."
-                />
-              </div>
-            </div>
-
-            {/* MAS-Simulator detailed infrastructure map */}
-            <div className="mt-10">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">Detailed Infrastructure Map</h3>
-                <p className="text-muted-foreground text-sm">MAS-Simulator: full cloud and monitoring topology (click to expand)</p>
-              </div>
-              <div
+              <div 
                 className="relative rounded-xl overflow-hidden border border-border/50 shadow-elevated cursor-pointer group"
                 onClick={() => setArchLightbox(true)}
               >
-                <img
-                  src={masArchitecture}
-                  alt="MAS-Simulator system architecture diagram showing CI/CD pipeline, AWS EC2, Docker containers, Prometheus, Grafana, Terraform, and Ansible"
+                <img 
+                  src={masArchitecture} 
+                  alt="MAS-Simulator system architecture diagram showing CI/CD pipeline, AWS EC2, Docker containers, Prometheus, Grafana, Terraform, and Ansible" 
                   className="w-full h-auto object-contain bg-black/90 transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />

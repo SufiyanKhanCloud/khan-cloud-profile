@@ -1,15 +1,8 @@
-import { useRef, type ReactNode } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useReducedMotion,
-  type Variants,
-} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedSectionProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
   animation?: "slide-up" | "slide-in-left" | "slide-in-right" | "zoom-in" | "fade-in";
   delay?: number;
@@ -18,85 +11,83 @@ interface AnimatedSectionProps {
   parallaxSpeed?: number;
 }
 
-// Refined "expo-out" easing shared across all entrances for a consistent feel.
-const EASE = [0.16, 1, 0.3, 1] as const;
-
-const variantMap: Record<NonNullable<AnimatedSectionProps["animation"]>, Variants> = {
-  "slide-up": { hidden: { opacity: 0, y: 48 }, visible: { opacity: 1, y: 0 } },
-  "slide-in-left": { hidden: { opacity: 0, x: -48 }, visible: { opacity: 1, x: 0 } },
-  "slide-in-right": { hidden: { opacity: 0, x: 48 }, visible: { opacity: 1, x: 0 } },
-  "zoom-in": { hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1 } },
-  "fade-in": { hidden: { opacity: 0 }, visible: { opacity: 1 } },
-};
-
-export function AnimatedSection({
-  children,
-  className = "",
+export function AnimatedSection({ 
+  children, 
+  className = "", 
   animation = "slide-up",
   delay = 0,
   id,
   parallax = false,
-  parallaxSpeed = 0.05,
+  parallaxSpeed = 0.05
 }: AnimatedSectionProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollOffset, setScrollOffset] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const prefersReduced = useReducedMotion();
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const parallaxY = useTransform(
-    scrollYProgress,
-    (v) => (v - 0.5) * 240 * parallaxSpeed
-  );
-
-  // Accessibility: users who prefer reduced motion get a static container.
-  if (prefersReduced) {
-    return (
-      <div ref={ref} id={id} className={className}>
-        {children}
-      </div>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), delay);
+        }
+      },
+      { threshold: 0.1, rootMargin: "50px" }
     );
-  }
 
-  const transition = { duration: 0.7, ease: EASE, delay };
-  const variants = variantMap[animation];
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
-  // Common case (no parallax): a single styled motion element, so layout is
-  // identical to the previous single-div implementation.
-  if (!parallax) {
-    return (
-      <motion.div
-        ref={ref}
-        id={id}
-        className={className}
-        variants={variants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "0px 0px -12% 0px" }}
-        transition={transition}
-      >
-        {children}
-      </motion.div>
-    );
-  }
+    return () => observer.disconnect();
+  }, [delay]);
 
-  // Parallax case: outer holds ref/id/className, middle drives scroll-linked Y,
-  // inner drives the entrance reveal. Keeping the transforms on separate
-  // elements avoids framer-motion transform conflicts.
+  useEffect(() => {
+    if (!parallax) return;
+    
+    const handleScroll = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        setScrollOffset(scrollProgress * 100 * parallaxSpeed);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [parallax, parallaxSpeed]);
+
+  const getAnimationClass = () => {
+    switch (animation) {
+      case "slide-up":
+        return isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0";
+      case "slide-in-left":
+        return isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0";
+      case "slide-in-right":
+        return isVisible ? "translate-x-0 opacity-100" : "translate-x-12 opacity-0";
+      case "zoom-in":
+        return isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0";
+      case "fade-in":
+        return isVisible ? "opacity-100" : "opacity-0";
+      default:
+        return isVisible ? "opacity-100" : "opacity-0";
+    }
+  };
+
   return (
-    <div ref={ref} id={id} className={className}>
-      <motion.div style={{ y: parallaxY }}>
-        <motion.div
-          variants={variants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "0px 0px -12% 0px" }}
-          transition={transition}
-        >
-          {children}
-        </motion.div>
-      </motion.div>
+    <div
+      ref={ref}
+      id={id}
+      className={cn(
+        "transition-all duration-700 ease-out will-change-transform",
+        getAnimationClass(),
+        className
+      )}
+      style={{
+        transitionDelay: `${delay}ms`,
+        ...(parallax && isVisible ? { transform: `translateY(${scrollOffset}px)` } : {}),
+      }}
+    >
+      {children}
     </div>
   );
 }
