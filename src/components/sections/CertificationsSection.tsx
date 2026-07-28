@@ -19,7 +19,7 @@ const featuredCertifications: FeaturedCert[] = [
     issuer: "IBM (via Coursera)",
     description:
       "9-course professional specialization covering CI/CD (GitHub Actions/Tekton), Docker, Kubernetes, OpenShift, Microservices, TDD, Monitoring and Observability.",
-    url: "https://coursera.org/verify/professional-cert/Z4GUYD9ZU520",
+    url: "https://coursera.org/share/66126fa30c8f0be3f41fdb20bf274318",
   },
   {
     name: "AWS Cloud Quest: Cloud Practitioner",
