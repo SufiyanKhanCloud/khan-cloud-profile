@@ -61,24 +61,16 @@ export function ContactForm() {
     setIsLoading(true);
 
     try {
-      const data = new FormData();
-      data.append("name", name.trim());
-      data.append("email", email.trim());
-      data.append("subject", subject.trim());
-      data.append("message", message.trim());
-      // FormSubmit control fields
-      data.append("_subject", "New message from portfolio contact form");
-      data.append("_template", "table");
-      data.append("_captcha", "false");
-      data.append("_honey", honey);
+      const { error: insertError } = await supabase
+        .from("contact_messages")
+        .insert({
+          name: name.trim(),
+          email: email.trim(),
+          subject: subject.trim(),
+          message: message.trim(),
+        });
 
-      const res = await fetch(FORMSUBMIT_ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
-      });
-
-      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      if (insertError) throw insertError;
 
       // Reset fields only on confirmed success
       setName("");
