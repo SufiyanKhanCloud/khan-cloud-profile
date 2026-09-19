@@ -41,6 +41,15 @@ const featuredProjects = [
     technologies: ["Next.js", "TypeScript", "Docker", "GitHub Actions", "Terraform", "Ansible", "AWS EC2", "Prometheus", "Grafana", "PromQL"],
     topBadge: "DevOps Architecture: Solo",
   },
+  {
+    title: "SmartHireAI (Final Year Project)",
+    description: "Owned the full DevOps layer for an AI-powered CV and hiring platform built on Next.js 16, React 19, TypeScript, Tailwind v4, Supabase, Gemini API, and WebRTC. Built the GitHub Actions CI/CD pipeline from scratch with branch protection and a dev-to-main PR workflow, implemented Playwright e2e tests (6/6 passing) with ESLint 9 flat config, and led a QA audit that surfaced 25 findings across security and reliability.",
+    githubUrl: "https://github.com/UBIT-AI-CV-Platform/SmartHireAI",
+    liveUrl: "https://smart-hire-ai-beta.vercel.app/",
+    technologies: ["Next.js", "React", "TypeScript", "Supabase", "Gemini API", "WebRTC", "GitHub Actions", "Playwright", "ESLint"],
+    hideImage: true,
+    topBadge: "Final Year Project: DevOps Lead",
+  },
 ];
 
 const earlierProjects = [

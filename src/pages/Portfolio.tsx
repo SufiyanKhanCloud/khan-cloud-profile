@@ -12,6 +12,7 @@ import { Navigation } from "@/components/sections/Navigation";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { LinkedInAchievement } from "@/components/sections/LinkedInAchievement";
 import { IncidentResponse } from "@/components/sections/IncidentResponse";
+import { LeadershipSection } from "@/components/sections/LeadershipSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { EngineeringFocus } from "@/components/sections/EngineeringFocus";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
@@ -49,6 +50,7 @@ export default function Portfolio() {
           </AnimatedSection>
 
           <IncidentResponse />
+          <LeadershipSection />
 
           <ProjectsSection />
           <SkillsSection />
