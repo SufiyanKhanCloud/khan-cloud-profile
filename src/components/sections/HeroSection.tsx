@@ -7,7 +7,7 @@ import { LazyImage } from "@/components/LazyImage";
 import { FloatingShapes } from "@/components/FloatingShapes";
 import { MagneticButton } from "@/components/MagneticButton";
 import { LiveTerminal } from "@/components/LiveTerminal";
-import resumeAsset from "@/assets/resume.pdf.asset.json";
+
 
 const typewriterTexts = ["Junior DevOps Engineer", "CI/CD & Infrastructure Automation"];
 
@@ -19,7 +19,7 @@ export function HeroSection() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left side - Text content */}
-            <motion.div 
+            <motion.div
               className="flex-1 text-center lg:text-left"
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -41,15 +41,15 @@ export function HeroSection() {
                   Sufiyan Khan
                 </span>
               </h1>
-              
+
               <div className="text-xl sm:text-2xl text-muted-foreground mb-6 h-12 flex items-center justify-center lg:justify-start">
                 <TypewriterEffect texts={typewriterTexts} className="font-medium" />
               </div>
-              
+
               <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-                I've built and maintained 16+ production CI/CD pipelines, led real-time incident response to a live brute-force attack, and cut a Jenkins pipeline's deploy time from 2 hours to 12 minutes, all on live infrastructure at Teknoloje Solutions.
+                During my five-month DevOps internship at Teknoloje Solutions, I built and maintained 16 CI/CD pipelines for Angular and ASP.NET Core applications. I also worked on Windows Server administration, security hardening, and production troubleshooting. Alongside that experience, I build AWS and Linux homelab projects to strengthen my cloud and infrastructure automation skills.
               </p>
-              
+
               <motion.div
                 className="flex flex-wrap items-center gap-4 justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
@@ -57,13 +57,21 @@ export function HeroSection() {
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
                 <MagneticButton strength={0.2}>
-                  <Button variant="hero" size="xl" className="group shadow-strong hover:shadow-glow transition-shadow duration-300" asChild>
-                    <a href={resumeAsset.url} download="Sufiyan-Khan-DevOps-Resume.pdf">
-                      <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                      Download CV
-                    </a>
-                  </Button>
-                </MagneticButton>
+  <Button
+    variant="hero"
+    size="xl"
+    className="group shadow-strong hover:shadow-glow transition-shadow duration-300"
+    asChild
+  >
+    <a
+      href="/Sufiyan-Khan-DevOps-Resume.pdf"
+      download="Sufiyan-Khan-DevOps-Resume.pdf"
+    >
+      <Download className="h-5 w-5 group-hover:scale-110 transition-transform" />
+      Download CV
+    </a>
+  </Button>
+</MagneticButton>
 
                 <div className="flex items-center gap-2">
                   <Button variant="ghost" size="icon" asChild className="hover:scale-110 hover:bg-primary/10 transition-all duration-300">
@@ -99,7 +107,7 @@ export function HeroSection() {
             >
               <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-hero p-1 animate-glow-pulse shadow-elevated relative group">
                 <div className="absolute inset-0 rounded-full bg-gradient-hero opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-500" />
-                <LazyImage 
+                <LazyImage
                   src="/lovable-uploads/profile.webp"
                   alt="Sufiyan Khan - DevOps Engineer"
                   width={400}
@@ -109,7 +117,7 @@ export function HeroSection() {
               </div>
             </motion.div>
           </div>
-            
+
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-soft opacity-50">
             <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">

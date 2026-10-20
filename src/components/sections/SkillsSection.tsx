@@ -5,11 +5,63 @@ import { TiltCard } from "@/components/TiltCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 const skillCategories = [
-  { icon: Cloud, title: "Infrastructure & Cloud", skills: ["AWS (EC2, S3, VPC, IAM)", "Kubernetes", "Windows Server", "Linux (Ubuntu/Debian)"] },
-  { icon: Terminal, title: "DevOps & Automation", skills: ["Docker", "Jenkins", "GitHub Actions", "Gitea", "Git", "PowerShell", "Bash"] },
-  { icon: Server, title: "Networking & Security", skills: ["WireGuard", "IIS", "SSL/TLS", "DNS", "Firewall Rules"] },
-  { icon: Code, title: "IaC & Config", skills: ["Terraform", "Ansible", "YAML"] },
-  { icon: Activity, title: "Observability", skills: ["Prometheus", "Grafana", "PromQL"] },
+  {
+    icon: Cloud,
+    title: "Cloud & Systems",
+    skills: [
+      "AWS EC2",
+      "AWS S3",
+      "AWS VPC",
+      "AWS IAM",
+      "Linux (Ubuntu)",
+      "Windows Server",
+    ],
+  },
+  {
+    icon: Terminal,
+    title: "CI/CD & Automation",
+    skills: [
+      "GitHub Actions",
+      "Gitea Actions",
+      "Jenkins",
+      "Git",
+      "PowerShell",
+      "Bash",
+    ],
+  },
+  {
+    icon: Server,
+    title: "Containers & IaC",
+    skills: [
+      "Docker",
+      "Docker Compose",
+      "Terraform",
+      "Ansible",
+      "YAML",
+    ],
+  },
+  {
+    icon: Code,
+    title: "Networking & Security",
+    skills: [
+      "WireGuard",
+      "SSH Hardening",
+      "Firewall Rules",
+      "IIS",
+      "DNS",
+      "SSL/TLS",
+    ],
+  },
+  {
+    icon: Activity,
+    title: "Monitoring & Observability",
+    skills: [
+      "Prometheus",
+      "Grafana",
+      "PromQL",
+      "Node Exporter",
+    ],
+  },
 ];
 
 export function SkillsSection() {
@@ -27,7 +79,7 @@ export function SkillsSection() {
               Technical Skills
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Technologies and tools I work with daily
+              Technologies and tools I've worked with across internships and hands-on projects.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">

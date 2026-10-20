@@ -8,76 +8,189 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 
 const featuredProjects = [
   {
-    title: "Zero-Trust WireGuard VPN Infrastructure",
-    description: "Production Windows Server was exposed via NAT port-forwarding. After detecting a live brute-force attack from an external IP, I replaced the entire setup with a Zero-Trust WireGuard VPN. Implemented asymmetric key pairs for every developer, strict firewall rules dropping all public traffic, and a secure onboarding process. Zero unauthorized access attempts have succeeded since deployment.",
-    technologies: ["WireGuard", "Windows Server", "Zero-Trust", "Firewall", "PowerShell", "Networking"],
+    title: "CI/CD Infrastructure & Gitea Platform",
+    description:
+      "During my five-month DevOps internship, I deployed and administered a self-hosted Gitea platform for 15+ developers, migrated its database from SQLite to SQL Server, configured role-based access control, and built a GitHub-to-Gitea synchronization bridge supporting 16 CI/CD pipelines for Angular and ASP.NET Core applications deployed on IIS.",
+    technologies: [
+      "Gitea",
+      "GitHub Actions",
+      "CI/CD",
+      "Windows Server",
+      "SQL Server",
+      "IIS",
+      "RBAC",
+      "PowerShell",
+    ],
     hideImage: true,
+    topBadge: "Internship Experience",
   },
   {
-    title: "Enterprise Gitea Version Control Platform & CI/CD Backbone",
-    description: "The company had no version control system. I deployed a self-hosted Gitea instance on Windows Server for 15+ developers, migrated from SQLite to MS SQL Server, implemented RBAC and multi-tenancy, and built a custom GitHub-to-Gitea sync bridge that became the backbone for 16+ production CI/CD pipelines running Angular and .NET deployments on IIS.",
-    technologies: ["Gitea", "Windows Server", "MS SQL Server", "RBAC", "GitHub Actions", "CI/CD", "DevOps"],
+    title: "Zero-Trust Remote Access with WireGuard",
+    description:
+      "Investigated more than 2,600 failed SMB/RDP login attempts originating from 20 IP addresses using Windows Event Viewer. Strengthened firewall restrictions and moved developer remote administration behind a WireGuard VPN, using per-user key pairs and a repeatable access-provisioning workflow.",
+    technologies: [
+      "WireGuard",
+      "Windows Server",
+      "PowerShell",
+      "Networking",
+      "Firewall Rules",
+      "Incident Response",
+      "Access Control",
+    ],
     hideImage: true,
+    topBadge: "Internship Experience",
   },
   {
-    title: "Ransomware-Resistant Automated Backup System",
-    description: "Production backups were stored on SMB mapped drives, meaning ransomware could encrypt both the server and backups simultaneously. I replaced this with a PowerShell vaulting engine that opens a temporary encrypted FTP connection, transmits compressed archives, then severs the connection immediately. The production server now has zero persistent network access to backup storage.",
-    technologies: ["PowerShell", "Windows Server", "FTP", "Cybersecurity", "Disaster Recovery", "Automation"],
-    hideImage: true,
-  },
-  {
-    title: "Production APM Pipeline with Prometheus and Grafana",
-    description: "Built a complete Application Performance Monitoring pipeline for a Next.js application. Created a custom prom-client exporter exposing live metrics, configured Docker host networking with host.docker.internal routing, wrote custom PromQL queries visualizing both server RAM and business logic metrics in a single Grafana dashboard. Exported dashboard as JSON for GitOps version control.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/Docker-360/tree/main/elk-docker",
-    technologies: ["Prometheus", "Grafana", "Docker", "Next.js", "Observability", "PromQL"],
-    hideImage: true,
-  },
-  {
-    title: "MAS-Simulator (Queueing Theory Engine)",
-    description: "Team-built Next.js queueing theory application. I independently owned the entire DevOps lifecycle: multi-stage Docker builds, zero-touch GitHub Actions CI/CD pipeline, AWS EC2 provisioning via Terraform, Ansible server configuration, and a full Prometheus and Grafana APM stack with custom PromQL queries.",
+    title: "MAS-Simulator: AWS & DevOps Infrastructure",
+    description:
+      "A team-built Next.js queueing-theory application for which I implemented the DevOps infrastructure. My work included Docker image builds, GitHub Actions automation, AWS EC2 provisioning with Terraform, server configuration with Ansible, and Prometheus/Grafana monitoring.",
     githubUrl: "https://github.com/SufiyanKhanCloud/MAS-SimulatorV2",
     liveUrl: "https://mas-simulator-calculator.vercel.app/",
     imageUrl: "/lovable-uploads/mas-simulator.webp",
-    technologies: ["Next.js", "TypeScript", "Docker", "GitHub Actions", "Terraform", "Ansible", "AWS EC2", "Prometheus", "Grafana", "PromQL"],
-    topBadge: "DevOps Architecture: Solo",
+    technologies: [
+      "AWS EC2",
+      "Terraform",
+      "Ansible",
+      "Docker",
+      "GitHub Actions",
+      "Prometheus",
+      "Grafana",
+      "PromQL",
+    ],
+    topBadge: "DevOps Implementation",
   },
   {
-    title: "SmartHireAI (Final Year Project)",
-    description: "Owned the full DevOps layer for an AI-powered CV and hiring platform built on Next.js 16, React 19, TypeScript, Tailwind v4, Supabase, Gemini API, and WebRTC. Built the GitHub Actions CI/CD pipeline from scratch with branch protection and a dev-to-main PR workflow, implemented Playwright e2e tests (6/6 passing) with ESLint 9 flat config, and led a QA audit that surfaced 25 findings across security and reliability.",
-    githubUrl: "https://github.com/UBIT-AI-CV-Platform/SmartHireAI",
-    liveUrl: "https://smart-hire-ai-beta.vercel.app/",
-    technologies: ["Next.js", "React", "TypeScript", "Supabase", "Gemini API", "WebRTC", "GitHub Actions", "Playwright", "ESLint"],
+    title: "Linux Homelab: Server Administration",
+    description:
+      "Repurposed an older laptop as an Ubuntu Server 24.04 homelab to practice Linux administration and remote server management. Configured key-based SSH authentication, enabled UFW with default-deny incoming rules and explicit SSH access, and disabled lid-close suspension to keep the server reachable during remote sessions. Building toward containerized services, monitoring, and operational troubleshooting.",
+    githubUrl:
+      "https://github.com/SufiyanKhanCloud/homelab-devops-labs",
+    technologies: [
+      "Ubuntu Server",
+      "Linux",
+      "SSH",
+      "UFW",
+      "Docker Compose",
+      "PostgreSQL",
+      "Prometheus",
+      "Grafana",
+    ],
     hideImage: true,
-    topBadge: "Final Year Project: DevOps Lead",
+    topBadge: "Hands-on Homelab",
+  },
+  {
+    title: "AWS for DevOps: Hands-on Labs",
+    description:
+      "Built a GitHub-triggered AWS CodePipeline/CodeBuild workflow for a Flask application. The CI process runs pytest, builds a non-root Docker image, tags the image with the commit SHA, and publishes it to Docker Hub. Configured credential storage through AWS Systems Manager Parameter Store and applied least-privilege IAM permissions. This project focuses on continuous integration and image publishing.",
+    githubUrl: "https://github.com/SufiyanKhanCloud/aws-for-devops",
+    technologies: [
+      "AWS CodePipeline",
+      "AWS CodeBuild",
+      "IAM",
+      "SSM Parameter Store",
+      "GitHub",
+      "pytest",
+      "Docker",
+      "Docker Hub",
+    ],
+    hideImage: true,
+    topBadge: "AWS CI",
   },
 ];
 
 const earlierProjects = [
   {
-    title: "Jenkins CI/CD Pipeline (Shared Libraries + RBAC)",
-    description: "Groovy pipeline on AWS using Jenkins Shared Libraries and RBAC. Cut deployment time from 2 hours to 12 minutes and reduced pipeline code duplication by 60%.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/Django-Notes-App",
+    title: "Automated Backup Workflow",
+    description:
+      "Automated server backup handling with PowerShell by preparing compressed archives, establishing a temporary FTP transfer connection, and closing the connection after transfer. Focused on reducing persistent connectivity between the production server and backup storage.",
+    technologies: [
+      "PowerShell",
+      "Windows Server",
+      "FTP",
+      "Automation",
+      "Backup Operations",
+    ],
+    hideImage: true,
+    topBadge: "Internship Experience",
+  },
+  {
+    title: "Prometheus & Grafana Application Monitoring",
+    description:
+      "Configured application and host monitoring using Prometheus and Grafana. Implemented a custom prom-client metrics exporter, created PromQL queries for server and application metrics, and exported the dashboard configuration for version control.",
+    githubUrl:
+      "https://github.com/SufiyanKhanCloud/Docker-360/tree/main/elk-docker",
+    technologies: [
+      "Prometheus",
+      "Grafana",
+      "Docker",
+      "PromQL",
+      "Observability",
+    ],
+    hideImage: true,
+  },
+  {
+    title: "SmartHireAI: Final-Year Project",
+    description:
+      "Contributed the DevOps and quality-engineering work for an AI-assisted CV and hiring platform. Implemented GitHub Actions automation, a development-to-main pull-request workflow, Playwright end-to-end tests, and ESLint configuration. Also contributed to a QA audit covering security and reliability findings.",
+    githubUrl: "https://github.com/UBIT-AI-CV-Platform/SmartHireAI",
+    liveUrl: "https://smart-hire-ai-beta.vercel.app/",
+    technologies: [
+      "GitHub Actions",
+      "Next.js",
+      "TypeScript",
+      "Playwright",
+      "ESLint",
+      "CI/CD",
+    ],
+    hideImage: true,
+    topBadge: "Final-Year Project",
+  },
+  {
+    title: "Jenkins CI/CD Pipeline",
+    description:
+      "Explored Jenkins pipeline automation using Groovy, Shared Libraries, role-based access control, Docker, and AWS EC2. Focused on reusable pipeline structure and deployment automation.",
+    githubUrl:
+      "https://github.com/SufiyanKhanCloud/Django-Notes-App",
     imageUrl: "/lovable-uploads/0f16ee99-0083-4dc5-b8ec-8bc0e93053fd.png",
-    technologies: ["Jenkins", "Groovy", "Shared Libraries", "RBAC", "Docker", "AWS EC2"],
+    technologies: [
+      "Jenkins",
+      "Groovy",
+      "Shared Libraries",
+      "RBAC",
+      "Docker",
+      "AWS EC2",
+    ],
   },
   {
     title: "Dockerized Expense Tracker",
-    description: "Java Spring Boot + MySQL app with Docker Compose. Deployed to AWS EC2 with persistent volumes.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/Expenses-Tracker-WebApp",
+    description:
+      "Containerized a Java Spring Boot expense-tracking application with MySQL using Docker Compose, including persistent storage, and practiced deploying the application to AWS EC2.",
+    githubUrl:
+      "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/Expenses-Tracker-WebApp",
     imageUrl: "/lovable-uploads/4be806dc-05ac-4208-961f-fd08d6b0f9a7.png",
-    technologies: ["Spring Boot", "MySQL", "Docker", "AWS EC2"],
+    technologies: [
+      "Spring Boot",
+      "MySQL",
+      "Docker",
+      "Docker Compose",
+      "AWS EC2",
+    ],
   },
   {
-    title: "Flask + MySQL Microservice",
-    description: "Two-tier microservices app with Flask and MySQL containers, deployed to EC2 under 10 mins.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/two-tier-flask-app",
+    title: "Flask + MySQL Application",
+    description:
+      "Built a two-tier application using Flask and MySQL containers to practice container networking, service configuration, and deployment workflows.",
+    githubUrl:
+      "https://github.com/SufiyanKhanCloud/docker-practice/tree/main/two-tier-flask-app",
     imageUrl: "/lovable-uploads/f6a1f223-b480-4572-9191-d2ce90198d22.png",
-    technologies: ["Flask", "MySQL", "Docker", "Microservices"],
+    technologies: ["Flask", "MySQL", "Docker", "Networking"],
   },
   {
-    title: "Smart Parking System (IoT-Based)",
-    description: "IoT-based parking system using ESP32 and sensors to monitor real-time slot availability and automate gate control with mobile dashboard.",
-    githubUrl: "https://github.com/SufiyanKhanCloud/Smart-Parking-System",
+    title: "Smart Parking System",
+    description:
+      "Developed an IoT-based parking system using ESP32 and sensors to monitor parking-slot availability and support gate control through a mobile dashboard.",
+    githubUrl:
+      "https://github.com/SufiyanKhanCloud/Smart-Parking-System",
     imageUrl: "/lovable-uploads/smart-parking-system.jpeg",
     technologies: ["ESP32", "IoT", "IR Sensors", "Blynk", "Automation"],
   },
@@ -123,13 +236,13 @@ export function ProjectsSection() {
                 <h3 className="text-2xl font-bold text-foreground mb-2">System Architecture</h3>
                 <p className="text-muted-foreground text-sm">MAS-Simulator: end-to-end DevOps pipeline and cloud infrastructure</p>
               </div>
-              <div 
+              <div
                 className="relative rounded-xl overflow-hidden border border-border/50 shadow-elevated cursor-pointer group"
                 onClick={() => setArchLightbox(true)}
               >
-                <img 
-                  src={masArchitecture} 
-                  alt="MAS-Simulator system architecture diagram showing CI/CD pipeline, AWS EC2, Docker containers, Prometheus, Grafana, Terraform, and Ansible" 
+                <img
+                  src={masArchitecture}
+                  alt="MAS-Simulator system architecture diagram showing CI/CD pipeline, AWS EC2, Docker containers, Prometheus, Grafana, Terraform, and Ansible"
                   className="w-full h-auto object-contain bg-black/90 transition-transform duration-500 group-hover:scale-[1.02]"
                   loading="lazy"
                 />
@@ -178,17 +291,17 @@ export function ProjectsSection() {
 
       {/* Architecture Lightbox */}
       {archLightbox && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setArchLightbox(false)}
         >
           <div className="relative max-w-[95vw] max-h-[95vh]">
-            <img 
-              src={masArchitecture} 
-              alt="MAS-Simulator system architecture diagram" 
+            <img
+              src={masArchitecture}
+              alt="MAS-Simulator system architecture diagram"
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
             />
-            <button 
+            <button
               onClick={() => setArchLightbox(false)}
               className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-background/90 text-foreground flex items-center justify-center text-lg font-bold hover:bg-primary hover:text-primary-foreground transition-colors shadow-medium"
             >
